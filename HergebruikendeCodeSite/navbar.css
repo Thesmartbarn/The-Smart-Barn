@@ -1,5 +1,5 @@
 :root {
-  --amountOfNavbarButtons: 3;
+  --amountOfNavbarButtons: 4;
 }
 
 #fixed{
@@ -16,6 +16,18 @@ nav {
   display: flex;
 }
 
+.collapsibleActive, .collapsible:hover {
+  color: black;
+}
+
+.GroepenCollapsibleContent {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  z-index: 10;
+}
+
 #mobileMenu {
   width: 40vw;
   height: calc(100vh - 40px);
@@ -25,27 +37,19 @@ nav {
   left: 0;
   overflow: auto;
   position: fixed;
-
-
-
   background-color: wheat;
+}
 
- }
- #mobileMenu a {
-
+#mobileMenu a {
   text-decoration:none;
   margin-left: 2vw;
   margin-top: 2vw;
   color: rgb(255, 102, 0);
-
-  
-
- }
+}
 
 .mobile_navbutton {
   cursor: pointer;
   width: 40vw;
-
 }
 
 #hamburgerMenu {
@@ -54,7 +58,6 @@ nav {
   width: 50px;
   display: none;
   cursor: pointer;
-
 }
 
 .navbutton,

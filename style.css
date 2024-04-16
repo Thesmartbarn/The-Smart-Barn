@@ -32,6 +32,10 @@ body {
   font-size: 3.5vw;
 }
 
+a{
+  text-decoration: none;
+}
+
 h1 {
   font-size: 600%;
   text-align: center;
@@ -57,7 +61,8 @@ h2 {
 }
 
 .koppelNaarGroepenTitel{
-  border-top: 3px solid black;
+  border-top: 5px solid rgba(239, 94, 27, 0.502);
+  margin-top: 5vh;
 }
 
 
