@@ -56,6 +56,10 @@ h2 {
   filter: invert(1);
 }
 
+.koppelNaarGroepenTitel{
+  border-top: 3px solid black;
+}
+
 
 .koppelNaarGroepenInformatie{
   display: grid;
@@ -101,22 +105,10 @@ h2 {
   text-align: center;
 }
 
-#visualisatiefoto{
-  width: 25vw;
-  height: 25vh;
-
-}
-
-#GroepSoftwareFoto{
+.fotogroepInformatie{
   width: 25vw;
   height: 25vh;
 }
-
-#GroepHardwareFoto{
-  width: 25vw;
-  height: 25vh;
-}
-
 
 #LogoFoto{
   margin-bottom: 2vw;
