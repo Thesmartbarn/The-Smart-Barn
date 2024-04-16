@@ -107,6 +107,17 @@ h2 {
 
 }
 
+#GroepSoftwareFoto{
+  width: 25vw;
+  height: 25vh;
+}
+
+#GroepHardwareFoto{
+  width: 25vw;
+  height: 25vh;
+}
+
+
 #LogoFoto{
   margin-bottom: 2vw;
 }
