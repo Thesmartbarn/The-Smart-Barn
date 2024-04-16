@@ -101,6 +101,11 @@ h2 {
   text-align: center;
 }
 
+#visualisatiefoto{
+  width: 25vw;
+  height: 25vh;
+}
+
 #LogoFoto{
   margin-bottom: 2vw;
 }
