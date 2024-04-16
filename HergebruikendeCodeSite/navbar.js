@@ -31,8 +31,8 @@ function onLogin(currentPage) {
       onLogin(currentPage);
     }, 100);
   } else if (netlifyIdentity.currentUser()) {
-    document.getElementById('login').innerHTML = 'Datà';
-    document.getElementById('login').href = '/pages/Data.html';
+    document.getElementById('login').innerHTML = 'Data';
+    document.getElementById('login').onclick =  "location.href='/Pages/Data.html'"
     document.getElementById('login2').innerHTML = 'Data';
     document.getElementById('login2').href = '/pages/Data.html';
   }
