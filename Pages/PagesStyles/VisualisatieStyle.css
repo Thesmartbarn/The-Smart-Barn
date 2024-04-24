@@ -29,6 +29,14 @@
     margin-top: 5vh;
     
 }
+.stap3{
+    border: 5vh solid rgb(174, 171, 171);
+    width: 50vw;
+    height: 10vh;
+    background-color: rgb(174, 171, 171);
+    margin-top: 5vh;
+    
+}
 .procesInfo{
     display: grid;
 
