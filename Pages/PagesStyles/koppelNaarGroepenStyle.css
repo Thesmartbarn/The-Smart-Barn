@@ -1,0 +1,51 @@
+*{
+    font-family: "Times New Roman", Times, serif;
+    transition: 500ms;
+}
+
+body{
+    margin: 0;
+}
+
+.PaginaTitel{
+    font-size: 600%;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+.OverkoepelendeDiv{
+    display: grid;
+}
+
+.Visualisatie{
+    grid-row: 1;
+    grid-column: 1;
+
+
+    background-color:  rgb(183,197,244);
+}
+
+.Software{
+    grid-row: 1;
+    grid-column: 2;
+
+    background-color: rgb(25,135,84) ;
+}
+
+.Hardware{
+    grid-row: 1;
+    grid-column: 3;
+
+    background-color: rgb(13,110,253);
+}
+
+.KoppelLink{
+    text-align: center;
+
+    width: 31vw;
+    height: 25vh;
+
+    padding-top: 25%;
+}

@@ -10,7 +10,9 @@
     <link rel="icon" href="/Foto/Barn_icoon.png" type="image/x-icon">
     <script src="/HergebruikendeCodeSite/navbar.js" type="text/javascript"></script>
     <script>setActiveNavButton("home")</script>
+    <script>onLogin("home")</script>
     <script src="/HergebruikendeCodeSite/Disclaimer.js" type="text/javascript"></script>
+    <script src="/software/js/netlify.js"></script>
     <!-- <script src="/HergebruikendeCodeSite/activeInNavbar.js" type="text/javascript" defer></script> -->
     <title>The Smart Barn Project</title>
 </head>
@@ -18,7 +20,8 @@
 <body>
   <navigatiebalk></navigatiebalk>
 
-  <img src="Foto/HompageTitlePicture.png" id="titelInFoto">
+  <img src="Foto/HompageTitlePicture.png" id="titelInFoto">""
+
 
   <h2 id="Quote">"Met een beter binnenklimaat is geen koe nog van haar melk"</h2>
   <h2>Wie zijn wij?</h2>
@@ -27,6 +30,49 @@
   <p id="Inleiding">De leefomstandigheden van de melkkoe verbeteren</p>
   <h2>Hoe?</h2>
   <p id="Inleiding">Met ons eindproject zorgen wij voor het automatisch verkoelen van een open koeienstal</p>
+  
+  <div class="koppelNaarGroepen">
+    <div class="koppelNaarGroepenTitel">
+      <h2>Welke groepen?</h2>
+    </div>
+    <a href="Pages\Visualisatie.html">
+      <div class="koppelNaarGroepenInformatie">
+        <div class="GroepVisualisatie koppelboxes">
+          <div class= "GroepVisualisatiePhoto">
+            <img src="Afbeeldingen\afbeeldig_visualisatie_Hoofdpagina.jpg" class="fotogroepInformatie">
+          </div>
+          <div class="GroepVisualisatieTitel">
+            <h2>Visualisatie</h2>
+          </div>
+          <div class="GroepVisualisatieInformatie">
+            <p>Vis info</p>
+          </div>
+        </div>
+    </a>
+    <a href="Pages\Software.html">
+        <div class="groepSoftware koppelboxes">
+          <img src="Afbeeldingen\software_Afbeelding_hoofdpagina.png"  class="fotogroepInformatie">
+          <div class="groepSoftwareTitel">
+            <h2>Software</h2>
+          </div>
+          <div class="groepSoftwareInformatie">
+            <p>Software info</p>
+          </div>
+        </div>
+    </a>
+    <a href="Pages\Hardware.html">
+      <div class="groepHardware koppelboxes">
+        <img src=" Afbeeldingen\hardware_hoofdpagina.webp" class="fotogroepInformatie">
+        <div class="groepHardwareTitel">
+          <h2>Hardware</h2>
+        </div>    
+        <div class="groepHardwareInformatie">
+          <p>Hardware info  </p>
+        </div>
+      </a>
+        </div>
+    </div>
+  </div>
   <div id="LogoFoto" style="display: flex; justify-content: center;">
     <img src="/Foto/smartbarn_logo.png" style="max-width: 100%; height: auto;">
   </div>
@@ -37,7 +83,7 @@
     <img src="/Foto/Logo_RTC-web.png" height="150" width="150">
     <img src="/Foto/mosa-rt_logo.jpeg" height="150" width="150">
   </div>
-  <img src="https://media.tenor.com/jvDyDzlpvC4AAAAj/banana-happy.gif" height="30" width="30" alt="Dansend Banaantjez">
+  <img src="https://media.tenor.com/jvDyDzlpvC4AAAAj/banana-happy.gif" height="30" width="30" alt="Dansend Banaantje">
   
   <disclaimer></disclaimer>
 </body>

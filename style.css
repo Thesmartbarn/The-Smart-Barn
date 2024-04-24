@@ -7,7 +7,7 @@
 
 body {
   background-color: whitesmoke;
-  color: black;
+  /* color: black; */
   margin: 0;
   padding: 0px;
 }
@@ -21,6 +21,7 @@ body {
   text-align: center;
   background-image: url(/Foto/HompageTitlePicture.png);
   background-size: cover;
+  z-index: 0;
 }
 
 #Quote{
@@ -30,6 +31,10 @@ body {
 
   color: var(--primaryColor);
   font-size: 3.5vw;
+}
+
+a{
+  text-decoration: none;
 }
 
 h1 {
@@ -56,11 +61,79 @@ h2 {
   filter: invert(1);
 }
 
+.koppelNaarGroepenTitel{
+  border-top: 5px solid rgba(239, 94, 27, 0.502);
+  margin-top: 5vh;
+}
+
+
+.koppelNaarGroepenInformatie{
+  display: grid;
+}
+
+.groepVisualisatie{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.GroepVisualisatieTitel{
+  color: var(--visColor);
+}
+
+.GroepVisualisatieInformatie{
+  text-align: center;
+}
+
+.groepSoftware{
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.groepSoftwareTitel{
+  color: var(--softColor);
+}
+
+.groepSoftwareInformatie{
+  text-align: center;
+}
+
+
+.groepHardware{
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.groepHardwareTitel{
+  color: var(--hardColor);
+}
+
+.groepHardwareInformatie{
+  text-align: center;
+}
+
+.fotogroepInformatie{
+  width: 25vw;
+  height: 25vh;
+}
+
 #LogoFoto{
   margin-bottom: 2vw;
 }
 
 .sponsors{
-    /* margin-left: 75vw; */
     text-align: center;
+}
+
+.koppelboxes{
+  width: 25vw;
+  height: 60vh;
+
+  margin-left: 4vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+
+  border: 0.2vh solid darkslategray;
+  border-radius: 1vh;
+
+  background-color: rgb(235, 235, 235);
 }
