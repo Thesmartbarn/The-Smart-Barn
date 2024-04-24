@@ -59,7 +59,9 @@ function getAndPlaceMinuteData(minuteChart, hourChart, dayChart) {
     // $.getJSON("http://192.168.0.246:5000", function (data) { // thuis laptop
     // $.getJSON("http://192.168.0.221:5000", function (data) { // thuis pc
     // $.getJSON("http://192.168.0.13:5000", function (data) { 
-    $.getJSON("http://172.16.118.128:5000", function (data) { 
+    // $.getJSON("http://172.16.118.128:5000", function (data) { 
+    $.getJSON("http://172.16.4.139:5000", function (data) { 
+
         pushData(temperatureDataPointsPerMinute, data[1])
         pushData(humidityDataPointsPerMinute, data[2])
 
