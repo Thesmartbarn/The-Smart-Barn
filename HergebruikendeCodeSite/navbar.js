@@ -41,12 +41,13 @@ function onLogin(currentPage) {
 function onLoginData(currentPage) {
   if (document.getElementById(currentPage) == null) {
     setTimeout(() => {
-      onLogin(currentPage);
+      onLoginData(currentPage);
     }, 100);
   } else if (netlifyIdentity.currentUser()) {
     document.getElementById('login').innerHTML = 'Logout';
     document.getElementById('login2').innerHTML = 'Logout';
     document.getElementById('login').setAttribute("onclick", LogoutOnClick());
+    
 
   }
 }
