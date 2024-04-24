@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
   addNetlifyEvents()
 });
 
+window.onresize = function (e) {
+  if (document.body.clientWidth > 1000) {
+    document.getElementById("mobileMenu").style.display = "none";
+    document.getElementById("hamburgerCheckBox").checked = false;
+  }
+}
+
 // Load in all needed netlify buttons and link to functions containing onclick events.
 function addNetlifyEvents() {
   const loginBtn = document.getElementById('login');
@@ -68,14 +75,6 @@ function onClickLogin() {
 function onClickLogout() {
   if (netlifyIdentity) {
     netlifyIdentity.logout();
-  }
-}
-
-
-window.onresize = function (e) {
-  if (document.body.clientWidth > 1000) {
-    document.getElementById("mobileMenu").style.display = "none";
-    document.getElementById("hamburgerCheckBox").checked = false;
   }
 }
 
