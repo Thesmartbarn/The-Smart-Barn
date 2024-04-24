@@ -21,6 +21,7 @@ body {
   text-align: center;
   background-image: url(/Foto/HompageTitlePicture.png);
   background-size: cover;
+  z-index: 0;
 }
 
 #Quote{
