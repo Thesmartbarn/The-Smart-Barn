@@ -31,6 +31,7 @@ function addNetlifyEvents() {
       addNetlifyEvents();
     }, 100);
   } else {
+    console.log("netlify buttons geladen")
     const is_dataPage = window.location.href.toLowerCase().indexOf("data") > -1
     if (netlifyIdentity.currentUser()) {
       // When on data page show logout option. On all other pages, link to data page.
