@@ -47,6 +47,7 @@ function onLoginData(currentPage) {
     document.getElementById('login').innerHTML = 'Logout';
     document.getElementById('login2').innerHTML = 'Logout';
     document.getElementById('login').setAttribute("onclick", LogoutOnClick());
+    
 
   }
 }
