@@ -11,12 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return response.text()
       })
       .then(data => {
-        tag.outerHTML = data
+        tag.outerHTML = data;
       });
-
-      const netlifyIdentity =  document.createElement('script');
-      netlifyIdentity.src = "https://identity.netlify.com/v1/netlify-identity-widget.js"
-      document.body.appendChild(netlifyIdentity);
 
       const netlifyCustom = document.createElement('script');
       netlifyCustom.src = "/software/js/netlify.js";
@@ -43,38 +39,4 @@ function setActiveNavButton(currentPage) {
     document.querySelector(`#${currentPage}`).classList.add("navbutton_active");
 
   }
-}
-
-function onLogin(currentPage) {
-  if (document.getElementById(currentPage) == null) {
-    setTimeout(() => {
-      onLogin(currentPage);
-    }, 100);
-  } else if (netlifyIdentity.currentUser()) {
-    document.getElementById('login').innerHTML = 'Data';
-    document.getElementById('login').setAttribute("onclick", "location.href='/Pages/Data.html'");
-    document.getElementById('login2').innerHTML = 'Data';
-    document.getElementById('login2').href = '/pages/Data.html';
-  }
-}
-
-function onLoginData(currentPage) {
-  if (document.getElementById(currentPage) == null) {
-    setTimeout(() => {
-      onLoginData(currentPage);
-    }, 100);
-  } else if (netlifyIdentity.currentUser()) {
-    document.getElementById('login').innerHTML = 'Logout';
-    document.getElementById('login2').innerHTML = 'Logout';
-    document.getElementById('login').setAttribute("onclick", LogoutOnClick());
-
-
-  }
-}
-
-function LogoutOnClick() {
-  console.log("fucntie uitgzvoerd")
-  netlifyIdentity.logout()
-  window.href("index.html")
-  console.log("logout ingedeudwd")
 }
