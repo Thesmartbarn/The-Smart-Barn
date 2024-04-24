@@ -16,18 +16,6 @@ nav {
   display: flex;
 }
 
-.collapsibleActive, .collapsible:hover {
-  color: black;
-}
-
-.GroepenCollapsibleContent {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  z-index: 10;
-}
-
 #mobileMenu {
   width: 40vw;
   height: calc(100vh - 40px);
