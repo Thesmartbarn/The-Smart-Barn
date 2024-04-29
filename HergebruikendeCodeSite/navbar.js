@@ -49,7 +49,7 @@ function onLoginData(currentPage) {
     document.getElementById('login').setAttribute("onclick", LogoutOnClick());
     
 
-  }
+  } 
 }
 
 function LogoutOnClick(){
