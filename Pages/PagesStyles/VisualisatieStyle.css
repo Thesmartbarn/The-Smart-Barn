@@ -1,0 +1,43 @@
+
+.titleVisualisatie{
+    text-align: center;
+    border-bottom: 0.25vh solid black;
+
+}
+.titleVoorstelling{
+    text-align: left;
+    margin-top: 10vh;
+    
+    
+}
+.titleProces{
+    text-align: left;
+    margin-top: 15vh;
+}
+.stap1{
+    border: 5vh solid rgb(174, 171, 171);
+    width: 50vw;
+    height: 5vh;
+    background-color: rgb(174, 171, 171);
+    
+}
+.stap2{
+    border: 5vh solid rgb(174, 171, 171);
+    width: 50vw;
+    height: 10vh;
+    background-color: rgb(174, 171, 171);
+    margin-top: 5vh;
+    
+}
+.stap3{
+    border: 5vh solid rgb(174, 171, 171);
+    width: 50vw;
+    height: 10vh;
+    background-color: rgb(174, 171, 171);
+    margin-top: 5vh;
+    
+}
+.procesInfo{
+    display: grid;
+
+}
