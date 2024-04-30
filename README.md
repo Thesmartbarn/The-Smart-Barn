@@ -9,3 +9,10 @@
 - sensoren uitlezen
 - ventilatoren aansturen
 - meer dingen
+
+## Instructies push-crontab vanuit RPi.
+
+### Crontab instructies
+1. open crontab editor
+crontab -e
+2. Voeg onderstaand commando toe. Controleer locatie van Smartbarn-map.
