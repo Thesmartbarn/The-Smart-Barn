@@ -16,8 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+  // if user logs in: print msg in log & change which button is visible.
+  netlifyIdentity.on('login', function (user) {
+    console.log('Welcome,', user);
+    window.location.href = "Pages/Data.html"
+  });
+
+  // if user logs out: print msg in log & change which button is visible.
+  netlifyIdentity.on('logout', function () {
+    window.location.href = "/index.html"
+  });
+
   // Link the netlify events to the login buttons.
-  addNetlifyEvents()
+  addNetlifyButtonEvents()
 });
 
 window.onresize = function (e) {
@@ -28,14 +39,14 @@ window.onresize = function (e) {
 }
 
 // Load in all needed netlify buttons and link to functions containing onclick events.
-function addNetlifyEvents() {
+function addNetlifyButtonEvents() {
   const loginBtn = document.getElementById('login');
   const loginBtnMobile = document.getElementById('login2');
 
   if (loginBtn == null || loginBtnMobile == null) {
     console.log("netlify buttons nog niet geladen")
     setTimeout(() => {
-      addNetlifyEvents();
+      addNetlifyButtonEvents();
     }, 100);
   } else {
     console.log("netlify buttons geladen")
