@@ -10,6 +10,44 @@
 - ventilatoren aansturen
 - meer dingen
 
+## Crontab
+
+- Check eerst of er geen crontab aan de gang is door middel van
+
+crontab -l
+
+- Vervolgens voeg je een crontab toe door
+
+crontab -e
+
+- Hier voeg je deze commando toe:
+
+* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
+
+- Verander het eerste stukje met jou pad van The-Smart-Barn
+
+
+
+
+## Crontab
+
+- Check eerst of er geen crontab aan de gang is door middel van
+
+crontab -l
+
+- Vervolgens voeg je een crontab toe door
+
+crontab -e
+
+- Hier voeg je deze commando toe:
+
+* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
+
+- Verander het eerste stukje met jou pad van The-Smart-Barn
+
+
+
+
 ## Instructies push-crontab vanuit RPi.
 
 ### Crontab instructies
