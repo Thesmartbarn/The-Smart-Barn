@@ -53,8 +53,6 @@ function addNetlifyEvents() {
         loginBtn.setAttribute("onclick", "location.href='/Pages/Data.html'");
         loginBtnMobile.href = '/pages/Data.html';
       }
-
-
     }
     else {
       if (is_dataPage) { // If unauthorised person goes to data page, send to home.
