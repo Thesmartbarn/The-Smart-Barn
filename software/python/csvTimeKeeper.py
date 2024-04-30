@@ -32,5 +32,5 @@ class csvTimeKeeper:
             json.dump(dump, fp, indent=4)
     
     def getCsvPath(self):
-        return f"software/csvData/smartbarn_data_{self.year}_{self.month}.csv"
+        return f"software/csvData/smartbarn_data_{self.year}_{'0' + str(self.month) if self.month < 10 else self.month}.csv"
         

@@ -54,6 +54,7 @@ class JsonDataFormater(GraphSimulator):
     
     def overWriteJsonFileWithNewData(self):
         self.getYearSpanCsvPaths()
+        self.simulatedGraphData = {"min": [], "hour": [], "day": []}
         for csvFilePath in self.yearSpanCsvPaths:
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)

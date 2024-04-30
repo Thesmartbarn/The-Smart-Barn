@@ -66,13 +66,15 @@ function addNetlifyEvents() {
 
 function onClickLogin() {
   if (netlifyIdentity) {
-    netlifyIdentity.open(); // Important! Change the config in Netlify to make it so signing up is disabled.
+    output = netlifyIdentity.open(); // Important! Change the config in Netlify to make it so signing up is disabled.
+    console.log(output);
   }
 }
 
 function onClickLogout() {
   if (netlifyIdentity) {
-    netlifyIdentity.logout();
+    output = netlifyIdentity.logout();
+    console.log(output);
   }
 }
 

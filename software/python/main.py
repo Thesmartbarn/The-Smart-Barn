@@ -138,12 +138,18 @@ hum = 0
 def randomAlgorithm(previousNumber):
     for i in range(random.randint(1,20)):
         choice = random.randint(-10, 10)
-        if i == random.randint(1 ,20):
+        if i == random.randint(1, 20):
             break
     newNumber = previousNumber + choice
     if not newNumber in range(0, 101):
         newNumber = previousNumber
     return newNumber  
+
+from fileExistenceChecker import checkIfFileExists
+
+GRAPH_DATA_SAVE_FILEPATH = "software/graphData.json"
+if not checkIfFileExists(GRAPH_DATA_SAVE_FILEPATH):
+    open(GRAPH_DATA_SAVE_FILEPATH, "w").close()
 
 from csvHandler import CSVhandler
 
@@ -151,7 +157,7 @@ csvHandler = CSVhandler()
 
 from jsonDataFormater import JsonDataFormater
 
-jsonDataFormater = JsonDataFormater("")
+jsonDataFormater = JsonDataFormater(GRAPH_DATA_SAVE_FILEPATH)
 
 from api import API
 
@@ -170,5 +176,9 @@ def test():
     fan = True if dataCalculator.checkIfTempIsGood(temp, hum) else False
     
     csvHandler.writeData([datetimeFormat(), temp, hum, fan])
-    return "hello world"
+    jsonDataFormater.overWriteJsonFileWithNewData()
+    
+    
+    
+    return jsonDataFormater.simulatedGraphData
 
