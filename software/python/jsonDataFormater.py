@@ -7,20 +7,27 @@ class GraphSimulator:
         self.currentDay = date_timeHandler.day()
         self.currentYear = date_timeHandler.year()
         self.simulatedGraphData = {"min": [], "hour": [], "day": []}
+        
+        self.mockCounter = 0
     
     def simulate(self, csvRow):
         time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
+            
         if self.currentHour != date_timeHandler.hour():
             time = f"{date_timeHandler.hour()}:00"
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
-            self.simulatedGraphData["min"] = []
-        
+            
         if self.currentDay != date_timeHandler.day():
             dayData = [date_timeHandler.datenow(), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
             self.simulatedGraphData["day"].append(dayData)
-            self.simulatedGraphData["hour"] = []
+            
+        if len(self.simulatedGraphData["min"]) > 60:
+            self.simulatedGraphData["min"].pop(0)
+        
+        if len(self.simulatedGraphData["hour"]) > 24:
+            self.simulatedGraphData["hour"].pop(0)
         
         if len(self.simulatedGraphData["day"]) > 365:
             self.simulatedGraphData["day"].pop(0)
@@ -28,17 +35,25 @@ class GraphSimulator:
     def simulateMock(self, csvRow):
         time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
-        if len(self.simulatedGraphData["min"]) > 60:
+    
+        if self.mockCounter % 60 == 0:
             time = f"{date_timeHandler.hour()}:00"
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
-            self.simulatedGraphData["min"] = []
-        if len(self.simulatedGraphData["hour"]) > 24:
+
+        if self.mockCounter % 1440 == 0:
             dayData = [date_timeHandler.datenow(), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
             self.simulatedGraphData["day"].append(dayData)
-            self.simulatedGraphData["hour"] = []
+        
+        if len(self.simulatedGraphData["min"]) > 60:
+            self.simulatedGraphData["min"].pop(0)
+        
+        if len(self.simulatedGraphData["hour"]) > 24:
+            self.simulatedGraphData["hour"].pop(0)
+        
         if len(self.simulatedGraphData["day"]) > 365:
             self.simulatedGraphData["day"].pop(0)
+            
             
     @staticmethod
     def averageOfDataList(list):
@@ -91,6 +106,8 @@ class JsonDataFormater(GraphSimulator):
                 for row in csvData:
                     super().simulateMock(row)
         self._writeDataToJson(self.simulatedGraphData)
+        self.mockCounter += 1
+
                     
     def _writeDataToJson(self, data: dict):
         with open(self.path, "w") as fp:
@@ -115,13 +132,3 @@ class JsonDataFormater(GraphSimulator):
             
         self.yearSpanCsvPaths.reverse() # start with oldest data
         
-    
-
-    
-            
-
-if __name__ == "__main__":
-    test = JsonDataFormater("hello")
-    test.getYearSpanCsvPaths()
-    print(test.overWriteJsonFileWithNewData())
-    print(test.yearSpanCsvPaths)

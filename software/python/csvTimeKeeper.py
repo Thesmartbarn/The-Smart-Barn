@@ -1,9 +1,7 @@
 import fileExistenceChecker, json, date_timeHandler
 
 class csvTimeKeeper:
-    month: int = 0
-    year: int = 0
-    
+        
     def __init__(self) -> None:
         self.year, self.month = date_timeHandler.dateTrackerFormat()
         self.fixTrackerFile()
@@ -17,17 +15,18 @@ class csvTimeKeeper:
             
             if (self.year, self.month) != (newDate := date_timeHandler.dateTrackerFormat()):
                 self.year, self.month = newDate
+                self.fixTrackerFile()
                 return True
             if not fileExistenceChecker.checkIfCsvFileExists(self.year, self.month):
                 return True
             return False
-        self.fixTrackerFile()
         
     def fixTrackerFile(self):
         dump =  {
                 "year": date_timeHandler.dateTrackerFormat()[0],
                 "month": date_timeHandler.dateTrackerFormat()[1]
                 }
+        print(dump)
         with open("software/datetracker.json", "w") as fp:
             json.dump(dump, fp, indent=4)
     

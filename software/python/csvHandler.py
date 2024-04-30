@@ -7,7 +7,6 @@ class CSVhandler(csvTimeKeeper, CSVWriter):
         super().__init__()
         
     def writeData(self, data: str):
-        print(super().month, super().year)
         if super().checkIfFileIsOutdated():
-            CSVWriter.createNewCSVfile(super().getCsvPath(), super().year, super().month)
+            CSVWriter.createNewCSVfile(super().getCsvPath(), self.year, self.month)
         CSVWriter.writeData(super().getCsvPath(), data)
