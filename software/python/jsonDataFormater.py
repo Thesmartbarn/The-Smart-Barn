@@ -9,14 +9,21 @@ class GraphSimulator:
         self.simulatedGraphData = {"min": [], "hour": [], "day": []}
     
     def simulate(self, csvRow):
-        self.simulatedGraphData["hour"].append([None, int(csvRow[1]), int(csvRow[2])])
+        time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
+        self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
         if self.currentHour != date_timeHandler.hour():
-            pass
+            time = f"{date_timeHandler.hour()}:00"
+            hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
+            self.simulatedGraphData["hour"].append(hourData)
+            self.simulatedGraphData["min"] = []
         
         if self.currentDay != date_timeHandler.day():
-            pass
-        # if len(self.simulatedGraphData["hour"]) > :
-            # pass
+            dayData = [date_timeHandler.datenow(), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            self.simulatedGraphData["day"].append(dayData)
+            self.simulatedGraphData["hour"] = []
+        
+        if len(self.simulatedGraphData["day"]) > 365:
+            self.simulatedGraphData["day"].pop(0)
         
     def simulateMock(self, csvRow):
         time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
@@ -59,7 +66,7 @@ class JsonDataFormater(GraphSimulator):
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
-                    super().simulate(row)
+                    super().simulateMock(row)
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):
