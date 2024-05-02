@@ -27,7 +27,6 @@ crontab -e
 - Verander het eerste stukje met jou pad van The-Smart-Barn
 
 
-<<<<<<< HEAD
 
 
 ## Crontab
@@ -73,6 +72,4 @@ cat ~/.ssh/id_rsa.pub
 # 4. Configure git (reeds klaar)
 git config --global user.email "your_email@example.com"
 git config --global user.name "Your Name"
-=======
 * * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang
->>>>>>> 06eb899 (kopgopkg)
