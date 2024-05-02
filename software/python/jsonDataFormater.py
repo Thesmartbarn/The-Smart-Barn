@@ -81,7 +81,7 @@ class JsonDataFormater(GraphSimulator):
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
-                    super().simulateMock(row)
+                    super().simulate(row)
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):

@@ -167,6 +167,7 @@ import dataCalculator
 from date_timeHandler import datetimeFormat
 
 from time import sleep
+import os
 
 # @api.main
 while True:
@@ -178,7 +179,9 @@ while True:
     csvHandler.writeData([datetimeFormat(), temp, hum, fan])
     jsonDataFormater.overWriteJsonFileWithNewData()
     
+    os.system("git push")
     
-    sleep(0.5)
+    
+    sleep(60)
     # return jsonDataFormater.simulatedGraphData
 
