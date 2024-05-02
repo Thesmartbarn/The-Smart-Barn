@@ -17,9 +17,8 @@ nav {
 }
 
 #mobileMenu {
-  width: 40vw;
+  width: 200px;
   height: calc(100vh - 40px);
-  display: none;
   top: 40px;
   z-index: 0;
   left: 0;
@@ -130,4 +129,22 @@ nav:has(.navbutton:hover) .navbutton:not(:hover) {
     width: 50px;
     text-align: center;
   }
+}
+
+#mobileMenu {
+  animation: showMobileMenu 500ms forwards;
+}
+
+.hideMobileMenu {
+  animation: hideMobileMenu 500ms forwards !important;
+}
+
+@keyframes showMobileMenu {
+  0% {transform: translate(-200px, 0px);}
+  100% {transform: translate(0px, 0px);}
+}
+
+@keyframes hideMobileMenu {
+  0% {transform: translate(0px, 0px);}
+  100% {transform: translate(-200px, 0px);}
 }
