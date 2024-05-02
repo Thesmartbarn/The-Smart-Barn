@@ -179,7 +179,9 @@ while True:
     csvHandler.writeData([datetimeFormat(), temp, hum, fan])
     jsonDataFormater.overWriteJsonFileWithNewData()
     
-    os.system("git push")
+    os.system(r"git add software/graphData.json")
+    os.system('git commit -m "automatic push"')
+    os.system('git push')
     
     
     sleep(60)
