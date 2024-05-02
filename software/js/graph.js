@@ -20,13 +20,16 @@ function renderGraphs() {
 }
 
 function getData() {
-    $.getJSON("http://172.16.111.217:5000", function (data) {
+
+    // $.getJSON("http://172.16.111.217:5000", function (data) {
+        fetch('/software/graphData.json')
+    .then(response => response.json())
+    .then(function(data) {
         // console.log(data);
         rebuildGraphList(data["min"], graphTempMin, graphHumMin);
         rebuildGraphList(data["hour"], graphTempHour, graphHumHour);
         rebuildGraphList(data["day"], graphTempDay, graphHumDay);
 
-        console.log(graphTempMin);
         renderGraphs();
 
         setTimeout(() => {

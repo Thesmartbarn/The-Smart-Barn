@@ -166,10 +166,10 @@ api = API(__name__)
 import dataCalculator
 from date_timeHandler import datetimeFormat
 
-@api.main
-def test():
-    global temp, hum
-    
+from time import sleep
+
+# @api.main
+while True:
     temp = randomAlgorithm(temp)
     hum = randomAlgorithm(hum)
     
@@ -179,6 +179,6 @@ def test():
     jsonDataFormater.overWriteJsonFileWithNewData()
     
     
-    
-    return jsonDataFormater.simulatedGraphData
+    sleep(0.5)
+    # return jsonDataFormater.simulatedGraphData
 
