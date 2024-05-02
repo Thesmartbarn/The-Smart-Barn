@@ -7,17 +7,17 @@ window.onload = function () {
             data: [
                 {
                     type: "line",
-                    dataPoints: graphListMin["temp"],
+                    dataPoints: graphTempMin,
                 },
                 {
                     type: "line",
-                    dataPoints: graphListMin["hum"],
+                    dataPoints: graphHumMin,
                 },
             ],
 
             axisY: {
                 minimum: 0,
-                maximum: 60,
+                maximum: 100,
             },
     });
 
@@ -29,16 +29,16 @@ window.onload = function () {
             data: [
                 {
                     type: "line",
-                    dataPoints: graphListHour["temp"],
+                    dataPoints: graphTempHour,
                 },
                 {
                     type: "line",
-                    dataPoints: graphListHour["hum"],
+                    dataPoints: graphHumHour,
                 },
             ],
             axisY: {
                 minimum: 0,
-                maximum: 24,
+                maximum: 100,
             },
         });
 
@@ -50,16 +50,16 @@ window.onload = function () {
             data: [
                 {
                     type: "line",
-                    dataPoints: graphListDay["temp"],
+                    dataPoints: graphTempDay,
                 },
                 {
                     type: "line",
-                    dataPoints: graphListDay["hum"],
+                    dataPoints: graphHumDay,
                 },
             ],
             axisY: {
                 minimum: 0,
-                maximum: 365,
+                maximum: 100,
             },
         });
     getData();
