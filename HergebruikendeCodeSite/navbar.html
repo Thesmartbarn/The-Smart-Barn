@@ -1,19 +1,26 @@
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/HergebruikendeCodeSite/navbar.css">
-<link rel="stylesheet" type="text/css" href="/HergebruikendeCodeSite/hamburgerMenu/hamburgerMenu.css">
+<script
+    type="text/javascript"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="/HergebruikendeCodeSite/navbar.css" />
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="/HergebruikendeCodeSite/hamburgerMenu/hamburgerMenu.css" />
 <!-- load global vars on all pages -->
-<link rel="stylesheet" type="text/css" href="/vars.css">
+<link rel="stylesheet" type="text/css" href="/vars.css" />
 
 <div id="fixed">
     <nav>
         <button id="hamburgerMenu">
-            <input type="checkbox" id="hamburgerCheckBox" class="hamburgerCheckBox visuallyHidden" onclick="if (document.getElementById('hamburgerCheckBox').checked) {
-        document.getElementById('mobileMenu').style.display = 'block'; 
-    } else {
-        document.getElementById('mobileMenu').style.display = 'none'; 
-    };">
-            <label for="hamburgerCheckBox" style="cursor: pointer;">
+            <input
+                type="checkbox"
+                id="hamburgerCheckBox"
+                class="hamburgerCheckBox visuallyHidden"
+                onclick="hamburgerMenuActions()" />
+            <label for="hamburgerCheckBox" style="cursor: pointer">
                 <div class="hamburger hamburger4">
                     <span class="bar bar1"></span>
                     <span class="bar bar2"></span>
@@ -22,27 +29,53 @@
                     <span class="bar bar5"></span>
                 </div>
             </label>
-
         </button>
         <div id="startPagina">
-            <button class="navbutton startpage icon" onclick="location.href='/index.html'"><img
-                    src="/Foto/Barn_icoon.png" height="25" width="25" id="navbar_logo"></button>
-            <button class="navbutton startpage" id="home" onclick="location.href='/index.html'">The Smart
-                Barn</button>
+            <button
+                class="navbutton startpage icon"
+                onclick="location.href='/index.html'">
+                <img
+                    src="/Foto/Barn_icoon.png"
+                    height="25"
+                    width="25"
+                    id="navbar_logo" />
+            </button>
+            <button
+                class="navbutton startpage"
+                id="home"
+                onclick="location.href='/index.html'">
+                The Smart Barn
+            </button>
         </div>
-        <button class="navbutton" id="doelen" onclick="location.href='/Pages/Doelen.html'">Doelen</button>
-        <button class="navbutton" id="deelnemers" onclick="location.href='/Pages/Deelnemers.html'">Deelnemers</button>
-        <button class="navbutton" id="groepen" onclick="location.href='/pages/koppelNaarGroepen.html'">Groepen</button>
-        <button class="navbutton" id="login" onclick="location.href='/Pages/login.html'">Login</button>
+        <button
+            class="navbutton"
+            id="doelen"
+            onclick="location.href='/Pages/Doelen.html'">
+            Doelen
+        </button>
+        <button
+            class="navbutton"
+            id="deelnemers"
+            onclick="location.href='/Pages/Deelnemers.html'">
+            Deelnemers
+        </button>
+        <button
+            class="navbutton"
+            id="groepen"
+            onclick="location.href='/pages/koppelNaarGroepen.html'">
+            Groepen
+        </button>
+        <button class="navbutton" id="login">Login</button>
     </nav>
-    <div id="mobileMenu">
+    <div id="mobileMenu" style="display: none" class="hideMobileMenu">
         <ul>
             <li><a href="/index.html">Frontpage</a></li>
             <li><a href="/Pages/Doelen.html">Doelen</a></li>
             <li><a href="/Pages/Deelnemers.html">Deelnemers</a></li>
-            <li><a id="login2" href="/Pages/login.html">Login</a></li>
+            <li><a href="/Pages/koppelNaarGroepen.html">Groepen</a></li>
+            <li><a id="login2" style="cursor: pointer">Login</a></li>
         </ul>
     </div>
 </div>
-<script src="/software/js/netlify.js"></script>
-<div style="height: 5.5vh;"></div> <!-- gets rid of gap from navbar -->
+<div style="height: 5.5vh"></div>
+<!-- gets rid of gap from navbar -->
