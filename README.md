@@ -1,62 +1,15 @@
-# The-Smart-Barn
-6IICT 2023-2024 eindproject
+# Instructies push-crontab vanuit RPi.
 
-## software
-
-- visualisatie en berekeningen met pygame
-- plaatsen van graph op website
-- berekeningen van graph
-- sensoren uitlezen
-- ventilatoren aansturen
-- meer dingen
-
-## Crontab
-
-- Check eerst of er geen crontab aan de gang is door middel van
-
-crontab -l
-
-- Vervolgens voeg je een crontab toe door
-
-crontab -e
-
-- Hier voeg je deze commando toe:
-
-* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
-
-- Verander het eerste stukje met jou pad van The-Smart-Barn
-
-
-
-
-## Crontab
-
-- Check eerst of er geen crontab aan de gang is door middel van
-
-crontab -l
-
-- Vervolgens voeg je een crontab toe door
-
-crontab -e
-
-- Hier voeg je deze commando toe:
-
-* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
-
-- Verander het eerste stukje met jou pad van The-Smart-Barn
-
-
-
-
-## Instructies push-crontab vanuit RPi.
-
-### Crontab instructies
+## Crontab instructies
 1. open crontab editor
 crontab -e
 2. Voeg onderstaand commando toe. Controleer locatie van Smartbarn-map.
+	* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
+3. Controleer of commando is toegevoegd aan crontab.
+crontab -l
 
 
-### Overige instructies
+## Overige instructies
 # 1. Genereer key
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
