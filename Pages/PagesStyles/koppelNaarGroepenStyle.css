@@ -14,11 +14,10 @@ a{
 
 .PaginaTitel{
     font-size: 500%;
-
     text-align: center;
-
     margin-top: 5vh;
 }
+
 
 .OverkoepelendeDiv{
     display: grid;
