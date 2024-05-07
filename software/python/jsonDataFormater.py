@@ -132,3 +132,7 @@ class JsonDataFormater(GraphSimulator):
             
         self.yearSpanCsvPaths.reverse() # start with oldest data
         
+        
+if __name__ == "__main__":
+    test = JsonDataFormater("software/graphData.json")
+    test.overWriteJsonFileWithNewDataMock()
