@@ -7,6 +7,10 @@
   margin: 0px;
 }
 
+body{
+  background-color: whitesmoke;
+}
+
 .HoofdDoelKader{
   background-color: rgb(240, 240, 240);
   border-radius: 25px;
