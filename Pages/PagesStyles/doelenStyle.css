@@ -7,6 +7,20 @@
   margin: 0px;
 }
 
+body{
+  background-color: whitesmoke;
+}
+
+.HoofdDoelKader{
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
+  height: 10vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
 #HoofdDoelTitel{
   margin-top: 5vh;
 
@@ -47,12 +61,21 @@
 }
 
 .DoelKaders{
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(233, 228, 228);
   border-radius: 25px;
-  height: 10vw;
+  height: 5vw;
   margin-left: 35vw;
   margin-right: 35vw;
   margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.persoonlijkeDoelKaders{
+  background-color: rgb(240, 240, 240);
+  border-radius: 25px;
+  height: 7.5vw;
+  width: 35vw;
+  margin-left: 7.5vw;
   margin-bottom: 1vw;
 }
 

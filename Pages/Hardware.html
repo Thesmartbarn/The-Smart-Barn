@@ -11,7 +11,7 @@
   <script src="/HergebruikendeCodeSite/navbar.js" type="text/javascript"></script>
   <script>setActiveNavButton("groepen")</script>
   <script src="/HergebruikendeCodeSite/Disclaimer.js" type="text/javascript" defer></script>
-  <script src="/HergebruikendeCodeSite/slideShowIOT2050.js" type="text/javascript" defer></script>
+  <script src="/HergebruikendeCodeSite/slideShow.js" type="text/javascript" defer></script>
   <script src="/Pages/PagesStyles/collapseList.js" type="text/javascript" defer></script>
   <title>The Smart Barn Project: Hardware</title>
 </head>
@@ -43,7 +43,8 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
       <div id="moreControllerInfo">
-        <button class="collapsibleListButton" id="controllerSpecsButton" onclick="changeVisibilityStatus(0)" type="button">
+        <button class="collapsibleListButton" id="controllerSpecsButton" onclick="changeVisibilityStatus(0)"
+          type="button">
           Specificaties van de controller<span class="collapsibleIcon">&#10133</span>
         </button>
         <div id="controllerSpecsHead" class="collapsibleList" style="display: none;">
@@ -54,12 +55,13 @@
             - Operatie Temperatuur: 0&deg;C...50&deg;C<br />
           </p>
         </div>
-        <button class="collapsibleListButton" id="controllerPortButton" onclick="changeVisibilityStatus(1)" type="button">
+        <button class="collapsibleListButton" id="controllerPortButton" onclick="changeVisibilityStatus(1)"
+          type="button">
           Poorten op de controller<span class="collapsibleIcon">&#10133</span>
         </button>
         <div id="controllerPortsHead" class="collapsibleList" style="display: none;">
           <p>
-            - 1X:  Gigabit ethernet<br>
+            - 1X: Gigabit ethernet<br>
             - 2X: Micro HDMI-poorten (tot 4K 60fps)<br>
             - 2X: USB-A 2.0 poorten<br>
             - 2X: USB-A 3.0 poorten<br>
@@ -103,7 +105,7 @@
       </div>
       <div id="LuchtVochtigheidsSensor">
         <div class="subtitle">
-          <h3 >LuchtVochtigheidsSensor</h3>
+          <h3>LuchtVochtigheidsSensor</h3>
         </div>
         <div id="LuchtVochtigheidsSensorInfo">
           <img src="/Foto/Luchtvochtigheidssensor.png" width="40%" alt="Luchtvochtigheidssensor" />
