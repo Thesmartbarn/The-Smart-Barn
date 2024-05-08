@@ -71,6 +71,11 @@ participant:nth-child(even) {
   height: 55vw;
 }
 
+.amyfotoDeelneemer{
+  width: 35vw;
+  height: 55vw;
+
+}
 @media (max-width: 800px) {
   .personImage {
     width: 80vw;
