@@ -4,11 +4,9 @@
   scroll-behavior: smooth;
 }
 
-.slideshow-container {
-  max-width: 50vw;
-  position: relative;
-  margin-left: 17vw;
-  margin-right: 20vw;
+.slideShowPosition {
+  display: flex;
+  justify-content: center;
 }
 
 /* Hide the images by default */
@@ -16,18 +14,16 @@
   display: none;
 }
 
-.slideshowPictures{
-  height: 25vw;
-  width: 50vw;
+.slideshowPictures:img{
+  height: 20vh;
+  width: 35vw;
 }
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 110%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
   color: black;
   font-weight: bold;
@@ -38,13 +34,13 @@
 }
 
 .prev{
-  left: 60%;
+  left: 48%;
   border-radius: 3px 0 0 3px;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 30%;
+  right: 48%;
   border-radius: 3px 0 0 3px;
 }
 
@@ -58,10 +54,6 @@
   color: black;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
-  bottom: -2vw;
-  margin-left: 6.5vw;
-  width: 100%;
   text-align: center;
 }
 
