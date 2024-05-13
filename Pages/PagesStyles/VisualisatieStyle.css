@@ -14,11 +14,6 @@
   display: none;
 }
 
-.slideshowPictures:img{
-  height: 20vh;
-  width: 35vw;
-}
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
