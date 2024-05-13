@@ -14,28 +14,21 @@
 
 
     body  {
-        margin-left: 100px;
-
-
-    }
-
-    h2 {
-        color: rgb(255, 102, 0);
-        text-align: center;
-    }
-
-    h1
-    {
-        color: rgb(255, 102, 0);
-        font-family: Pussycat, Algerian, Broadway;
         text-align: center;
         
-    }
 
+
+    }
+    h2,h1 {
+        color: rgb(255, 102, 0);
+        font-family: Pussycat, Algerian, Broadway;
+    }
     p
     {
-
+        display: flex;
         font-family: 'Times New Roman', Times, serif;
+        margin-left: 500px;
+        text-align: justify;
 
     }
 
@@ -51,7 +44,8 @@
     <h1>Team Softwear</h1>
 
     <div class="Data_Verwerking">
-        <h2>Data Verwerking</h2>
+        <h2>DataVerwerking</h2>
+
 
 
         
@@ -64,13 +58,13 @@
     <div class="Beveiliging">
         <h2> Beveiliging </h2>
 
-        <p>We hebben de Beveiliging van de login pagina gemaakt door middel van Netlify Authentication.
+        <p>We hebben de Beveiliging van de login pagina gemaakt door middel van Netlify Authentication.<br>
             We hebben ervoor gezorgd dat niemand zo maar aan de data toe kan en dat alleen de boer de data kan bestuderen en vergelijken. <br>
 
             <br>
-            Netlify Authentication werkt met javascript en zorgt ervoor dat we eerst vergelijken of de gebruiker wel ingelogd is. 
-            <br>Zo niet? Dan wordt hij doorgestuurd naar de home pagina.
-            <br>Anders mag de persoon door naar de Data pagina en kan hij de data bestuderen.
+            Netlify Authentication werkt met javascript en zorgt ervoor dat we eerst vergelijken of de gebruiker wel ingelogd is.<br>
+            Zo niet? Dan wordt hij doorgestuurd naar de home pagina.<br>
+            Anders mag de persoon door naar de Data pagina en kan hij de data bestuderen.<br>
         </p>
         
     
@@ -85,6 +79,23 @@
     </div>
     <div class="Grafiek">
         <h2> Grafiek </h2>
+
+        <p>De grafiek laten we tekenen door een javascript library met een simpele ai genaamd CanvasJS. <br>
+            Dit zorgt ervoor dat de grafiek mooi wordt weergegeven en enkele minuut wordt upgedated en getekend. <br>
+            <br>
+            De grafiek laten we alleen op de Data pagina weergeven en kan alleen worden bekeken als u in de lijst gezet wordt. <br>
+            Dan kunt u inloggen met een zelf gemaakte wachtwoord en de grafiek bestuderen en vergelijken. <br>
+            <br>
+            De grafiek is in 3 delen gesplits: <br>
+             - De data van de afgelopen uur <br>
+             - De gemiddelde data van de afgelopen uren na 24h <br>
+             - De gemiddelde data van de afgelopen 24h na 1 jaar <br>
+
+             <br>
+            
+             Dan zijn er ook twee lijnen getekend. Een daarvan is de data van de Luchtvochtigheid (Blauw) en de andere van de temperatuur (Rood).  <br>
+
+             </p>
 
 
 
