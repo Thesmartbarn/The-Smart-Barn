@@ -46,7 +46,7 @@ while True:
     jsonDataFormater.overWriteJsonFileWithNewData()
     
     os.system(r"git add software/graphData.json")
-    os.system('git commit -m "automatic push"')
+    os.system(f'git commit -m "automatic data push {datetimeFormat()} [skip netlify]"')
     os.system('git push')
     
     

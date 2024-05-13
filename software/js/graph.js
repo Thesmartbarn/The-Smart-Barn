@@ -22,7 +22,8 @@ function renderGraphs() {
 function getData() {
 
     // $.getJSON("http://172.16.111.217:5000", function (data) {
-        fetch('/software/graphData.json')
+        // fetch('/software/graphData.json')
+    fetch('https://raw.githubusercontent.com/elmooooooooooo/The-Smart-Barn/website/software/graphData.json')
     .then(response => response.json())
     .then(function(data) {
         // console.log(data);
@@ -34,7 +35,7 @@ function getData() {
 
         setTimeout(() => {
             getData();
-        }, 200);
+        }, 30000);
     });
 }
 
