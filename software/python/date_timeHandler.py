@@ -24,5 +24,15 @@ def month():
 def year():
     return date.today().year
 
+def getMinuteFromDateTime(dateTime):
+    _time = dateTime.split(" ")[1].split(":")
+    return f"{_time[0]}:{_time[1]}"
+
+def getHourFromDateTime(dateTime):
+    return f"{dateTime.split(" ")[1].split(":")[0]}:00"
+
+def getDayFromDateTime(dateTime):
+    return dateTime.split(" ")[0]
+
 
 
