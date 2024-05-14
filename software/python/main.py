@@ -26,7 +26,7 @@ from jsonDataFormater import JsonDataFormater
 jsonDataFormater = JsonDataFormater(GRAPH_DATA_SAVE_FILEPATH)
 
 import dataCalculator
-from date_timeHandler import datetimeFormat
+from date_timeHandler import getDayFromDateTime, getMinuteFromDateTime, datetimeFormat
 
 from time import time, sleep
 import os
@@ -42,13 +42,13 @@ while True:
         temp = randomAlgorithm(temp)
         hum = randomAlgorithm(hum)
         
-        fan = True if dataCalculator.checkIfTempIsGood(temp, hum) else False
+        fan = int(dataCalculator.calculateFanSpeed(temp, hum) / 2.55)
         
-        csvHandler.writeData([datetimeFormat(), temp, hum, fan])
-        jsonDataFormater.overWriteJsonFileWithNewData()
+        csvHandler.writeData([f"{getDayFromDateTime(datetimeFormat())} {getMinuteFromDateTime(datetimeFormat())}", temp, hum, fan])
+        jsonDataFormater.overWriteJsonFileWithNewData(fan)
         
         os.system(r"git add software/graphData.json")
-        os.system(f'git commit -m "automatic data push {datetimeFormat()} [skip netlify]"')
+        os.system(f'git commit -m "automatic data push {getDayFromDateTime(datetimeFormat())} {getMinuteFromDateTime(datetimeFormat())} [skip netlify]"')
         os.system('git push')
         
         previousTime = currentTime
