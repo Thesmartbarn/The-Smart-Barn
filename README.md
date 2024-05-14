@@ -4,7 +4,7 @@
 1. open crontab editor
 crontab -e
 2. Voeg onderstaand commando toe. Controleer locatie van Smartbarn-map.
-	* * * * * cd /home/rpi/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit" && git push origin Software-gang 
+	* * * * * cd /home/thesmartbarn/Desktop/The-Smart-Barn && git add . && git commit -m "Automatic commit [skip netlify]"  && git push origin website 
 3. Controleer of commando is toegevoegd aan crontab.
 crontab -l
 
