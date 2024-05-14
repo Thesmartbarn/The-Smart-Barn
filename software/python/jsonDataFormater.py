@@ -11,16 +11,16 @@ class GraphSimulator:
         self.mockCounter = 0
     
     def simulate(self, csvRow):
-        time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
+        time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
             
         if self.currentHour != date_timeHandler.hour():
-            time = f"{date_timeHandler.hour()}:00"
+            time = date_timeHandler.getHourFromDateTime(csvRow[0])
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
             
         if self.currentDay != date_timeHandler.day():
-            dayData = [date_timeHandler.datenow(), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            dayData = [date_timeHandler.getHourFromDateTime(csvRow[0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
             self.simulatedGraphData["day"].append(dayData)
             
         if len(self.simulatedGraphData["min"]) > 60:
@@ -33,16 +33,16 @@ class GraphSimulator:
             self.simulatedGraphData["day"].pop(0)
         
     def simulateMock(self, csvRow):
-        time = f"{date_timeHandler.hour()}:{date_timeHandler.minute()}"
+        time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
     
         if self.mockCounter % 60 == 0:
-            time = f"{date_timeHandler.hour()}:00"
+            time = date_timeHandler.getHourFromDateTime(csvRow[0])
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
 
         if self.mockCounter % 1440 == 0:
-            dayData = [date_timeHandler.datenow(), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            dayData = [date_timeHandler.getDayFromDateTime(csvRow[0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
             self.simulatedGraphData["day"].append(dayData)
         
         if len(self.simulatedGraphData["min"]) > 60:
@@ -81,7 +81,7 @@ class JsonDataFormater(GraphSimulator):
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
-                    super().simulate(row)
+                    super().simulateMock(row)
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):
