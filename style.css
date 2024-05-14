@@ -61,6 +61,11 @@ h2 {
   filter: invert(1);
 }
 
+.linkNaarBlog{
+  object-fit: contain;
+  text-align: center;
+}
+
 .koppelNaarGroepen {
   display: flex;
   flex-wrap: wrap;

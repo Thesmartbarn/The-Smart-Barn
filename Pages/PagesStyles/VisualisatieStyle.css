@@ -2,6 +2,11 @@
   font-family: 'Times New Roman', Times, serif;
   transition: 300ms;
   scroll-behavior: smooth;
+  margin: 0;
+}
+
+body{
+  background-color: whitesmoke;
 }
 
 .slideShowPosition {
@@ -61,4 +66,153 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.uitlegTitel{
+  font-size: 250%;
+  text-align: center;
+
+  margin-top: 5vh;
+  margin-bottom: 1vw;
+  padding-bottom: 1vh;
+
+  border-top: 0.7vh solid rgb(238, 144, 94);
+}
+
+.uitlegOverWatDoen{
+  display: grid;
+  text-align: center;
+
+  margin-bottom: 5vh;
+}
+
+.uitlegAlgemeen{
+  grid-row: 1;
+  grid-column: 1;
+}
+.uitlegAlgemeenInfo{
+  margin-top: 1.5vh;
+}
+
+.uitlegStart{
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.uitlegStartInfo{
+  margin-top: 1.5vh;
+}
+
+.uitlegMidden{
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.uitlegMiddenInfo{
+  margin-top: 1.5vh;
+}
+
+.uitlegEind{
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.uitlegEindInfo{
+  margin-top: 1.5vh;
+
+}
+
+.uitlegKader{
+  height: 20vh;
+  width: 35vw;
+
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 7.5vw;
+
+  background-color: rgba(211, 211, 211, 0.171);
+  border-radius: 2vh;
+  border: 0.5vh solid rgba(128, 128, 128, 0.039);
+
+  text-align: center;
+}
+
+#gebruikteToolsTitel{
+  font-size: 250%;
+  text-align: center;
+
+  padding-bottom: 1vh;
+  border-top: 0.7vh solid rgb(238, 144, 94);
+}
+
+.programmeerTalen{
+  display: grid;
+}
+
+#programmeerTalenTitel{
+  grid-row: 1;
+  grid-column: 2;
+
+  margin-top: 6vh;
+  margin-bottom: 4vh;
+
+  font-size: 150%;
+  text-align: center;
+}
+
+.html{
+  grid-row: 2;
+  grid-column: 1;
+
+  text-align: center;
+}
+
+.css{
+  grid-row: 2;
+  grid-column: 2;
+
+  text-align: center;
+}
+
+.javascript{
+  grid-row: 2;
+  grid-column: 3;
+
+  text-align: center;
+}
+
+.tools{
+  display: grid;
+}
+
+#toolsTitel{
+grid-row: 1;
+grid-column: 2;
+
+  margin-top: 6vh;
+  margin-bottom: 4vh;
+
+  font-size: 150%;
+  text-align: center;
+}
+
+.canva{
+  grid-row: 2;
+  grid-column: 1;
+
+  text-align: center;
+}
+
+.chatGPT{
+  grid-row: 2;
+  grid-column: 2;
+
+  text-align: center;
+}
+
+.netlify{
+  grid-row: 2;
+  grid-column: 3;
+
+  text-align: center;
 }
