@@ -1,0 +1,60 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    transition: 300ms;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 8px;
+}
+
+article {
+    width: clamp(50%, 600px, 100%);
+}
+
+h1 {
+    text-align: center;
+}
+
+article > h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+}
+
+
+#inleiding-container {
+    display: flex;
+    justify-content: center;
+}
+
+#inleiding {
+    width: 100%;
+    border: 5px solid rgb(181, 181, 181);
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#info-kader-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+info-kader {
+    width: min(100%, 500px);
+    height: 400px;
+    margin: 10px;
+    border-radius: 20px;
+    display: block;
+    background-color: lightgrey;
+}
