@@ -41,6 +41,7 @@ article > h1 {
     background-color: lightgrey;
     border-radius: 10px;
     padding: 20px;
+    font-size: 22px;
 }
 
 #info-kader-container {
@@ -52,9 +53,19 @@ article > h1 {
 
 info-kader {
     width: min(100%, 500px);
-    height: 400px;
+    min-height: 400px;
     margin: 10px;
     border-radius: 20px;
     display: block;
     background-color: lightgrey;
+}
+
+info-kader > h1 {
+    font-size: 40px;
+}
+
+info-kader > p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
 }

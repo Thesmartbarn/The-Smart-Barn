@@ -60,15 +60,41 @@
                 </info-kader>
                 <info-kader>
                     <h1>Data meting en verwerking</h1>
-                    <p></p>
+                    <p>
+                        De data wordt uitgelezen op een Raspberry Pi (een
+                        microcomputer). Hierop draait het programma dat de data
+                        zal uitlezen en verwerken. Elke minuut wordt er een
+                        sample genomen van de temperatuur en de
+                        luchtvochtigheid. De data wordt verwerkt en opgeslagen
+                        in een CSV bestand. Voor de grafiek op de website wordt
+                        een simulatie van data gemaakt van het afgelopen jaar.
+                        Hiermee zorgen we ervoor dat er niks meer berekend moet
+                        worden op de website.
+                    </p>
                 </info-kader>
                 <info-kader>
                     <h1>Data opslag</h1>
-                    <p></p>
+                    <p>
+                        Het is belangrijk om de data bij te houden om fouten in
+                        het systeem te vinden, grafieken te maken en de
+                        temperatuur en luchtvochtigheid van de koeienstal in het
+                        oog te houden. De data van elke meting wordt opgeslagen
+                        in een CSV bestand (gescheiden door komma's). Het
+                        formaat is: [datum en tijd, temperatuur,
+                        luchtvochtigheid, ventilatorsnelheid]. Dit bestand is
+                        makkelijk te importeren in Excel om grafieken mee te
+                        maken en een jaarrapport te maken.
+                    </p>
+                    <p>
+                        De data die op de website in grafieken wordt geplaatst
+                        wordt op voorhand berekend door het programma in een
+                        JSON bestand. Dit bestand wordt online geupload zodat de
+                        website dit bestand kan ophalen.
+                    </p>
                 </info-kader>
                 <info-kader>
                     <h1>Data visualisatie</h1>
-                    <p></p>
+                    <p>De data op de website wordt gevisualiseerd op 3 grafieken.</p>
                 </info-kader>
             </div>
         </main>
