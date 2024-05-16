@@ -48,10 +48,12 @@
     padding-bottom: 1vh;
 
     margin-left: 2.5vw;
+    margin-bottom: 15vh;
 
     background-color: rgb(240, 240, 240);
 
     border: 1vh solid rgb(220, 220, 220);
     border-radius: 3vh;
     text-align: center;
+    
 }
