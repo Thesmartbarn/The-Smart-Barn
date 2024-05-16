@@ -20,6 +20,16 @@
             src="/HergebruikendeCodeSite/Disclaimer.js"
             type="text/javascript"></script>
 
+        <!-- slideshow -->
+        <script
+            src="/HergebruikendeCodeSite/slideShow.js"
+            type="text/javascript"
+            defer></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/HergebruikendeCodeSite/slideShow.css" />
+
         <script>
             setActiveNavButton("groepen");
             onLogin("home");
@@ -44,6 +54,55 @@
                     </p>
                 </div>
             </article>
+            <div class="slideShowPosition">
+                <div class="slideshow-container">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <img
+                            class="slideShowPictures"
+                            src="/foto/software/data-site.png" />
+                        <div class="text">
+                            De verwerkte data die op de site te zien is (voorbeeld)
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img
+                            class="slideShowPictures"
+                            src="/Foto/software/code-software.png" />
+                        <div class="text">
+                            Een deel van de code van de back-end software
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img
+                            class="slideShowPictures"
+                            src="/foto/software/testingFanSpeed.png" />
+                        <div class="text">
+                            Het testen van de reactie van de ventilatoren op virtuele temperatuur en luchtvochtigheid
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img
+                            class="slideShowPictures"
+                            src="/Foto/software/raw-data.png" />
+                        <div class="text">
+                            Rauwe data in CSV (links) en JSON (rechts) formaat
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Next and previous buttons -->
+                    <button class="prev" onclick="plusSlides(-1)">
+                        &#10094;
+                    </button>
+                    <button class="next" onclick="plusSlides(1)">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
             <div id="info-kader-container">
                 <info-kader>
                     <h1>Login (beveiliging)</h1>
@@ -71,6 +130,11 @@
                         Hiermee zorgen we ervoor dat er niks meer berekend moet
                         worden op de website.
                     </p>
+                    <p>
+                        De temperatuur en de luchtvochtigheid worden door een
+                        geïntigreerde AI verwerkt naar een 0-255 (8bit) waarde
+                        omgezet die bruikbaar is voor de frequentieregelaar.
+                    </p>
                 </info-kader>
                 <info-kader>
                     <h1>Data opslag</h1>
@@ -94,7 +158,10 @@
                 </info-kader>
                 <info-kader>
                     <h1>Data visualisatie</h1>
-                    <p>De data op de website wordt gevisualiseerd op 3 grafieken.</p>
+                    <p>
+                        De data op de website wordt gevisualiseerd op 3
+                        grafieken.
+                    </p>
                 </info-kader>
             </div>
         </main>
