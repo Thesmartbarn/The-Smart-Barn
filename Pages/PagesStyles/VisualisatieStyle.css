@@ -124,6 +124,8 @@ body{
 
 .tools{
   display: grid;
+
+  margin-bottom: 6vh;
 }
 
 #toolsTitel{
