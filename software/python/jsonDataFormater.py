@@ -6,7 +6,7 @@ class GraphSimulator:
         self.currentHour = date_timeHandler.hour()
         self.currentDay = date_timeHandler.day()
         self.currentYear = date_timeHandler.year()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": []}
+        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
         
         self.mockCounter = 0
     
@@ -31,6 +31,9 @@ class GraphSimulator:
         
         if len(self.simulatedGraphData["day"]) > 365:
             self.simulatedGraphData["day"].pop(0)
+            
+        # fan speed day long
+        self.simulatedGraphData["fanDay"].append(csvRow[3])
         
     def simulateMock(self, csvRow):
         time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
@@ -74,14 +77,15 @@ class JsonDataFormater(GraphSimulator):
         self.path: str = path
         self.yearSpanCsvPaths: list = []
     
-    def overWriteJsonFileWithNewData(self):
+    def overWriteJsonFileWithNewData(self, currentFanSpeed: int):
         self.getYearSpanCsvPaths()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": []}
+        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
         for csvFilePath in self.yearSpanCsvPaths:
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
                     super().simulateMock(row)
+        self.simulatedGraphData["currentFanSpeed"] = currentFanSpeed
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):
