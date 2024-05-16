@@ -1,147 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Pages/PagesStyles/VisualisatieStyle.css" />
+        <script
+            src="/HergebruikendeCodeSite/slideShow.js"
+            type="text/javascript"
+            defer></script>
+        <script
+            src="/HergebruikendeCodeSite/navbar.js"
+            type="text/javascript"></script>
+        <script>
+            setActiveNavButton("groepen");
+        </script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/Pages/PagesStyles/VisualisatieStyle.css">
-  <script src="/HergebruikendeCodeSite/slideShow.js" type="text/javascript" defer></script>
-  <script src="/HergebruikendeCodeSite/navbar.js" type="text/javascript"></script>
-  <script>
-    setActiveNavButton("groepen");
-</script>
-  <title>The Smart Barn Project: Visualisatie</title>
-</head>
+        <!-- slideshow -->
+        <script
+            src="/HergebruikendeCodeSite/slideShow.js"
+            type="text/javascript"
+            defer></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/HergebruikendeCodeSite/slideShow.css" />
+        <title>The Smart Barn Project: Visualisatie</title>
+    </head>
 
-<body>
-  <navigatiebalk></navigatiebalk>
+    <body>
+        <navigatiebalk></navigatiebalk>
 
-  <!-- Slideshow container -->
-  <div class="slideShowPosition">
-    <div class="slideshow-container">
+        <!-- Slideshow container -->
+        <div class="slideShowPosition">
+            <div class="slideshow-container">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <img
+                        class="slideShowPictures"
+                        src="/foto/oude_website_foto.jpg" />
+                    <div class="text">
+                        Foto van de originele versie van de website
+                    </div>
+                </div>
 
-      <!-- Full-width images with number and caption text -->
-      <div class="mySlides fade">
-        <img class="slideShowPictures" src="/foto/oude_website_foto.jpg" height="500" width="1000">
-        <div class="text">Foto van de originele versie van de website</div>
-      </div>
+                <div class="mySlides fade">
+                    <img
+                        class="slideShowPictures"
+                        src="/Foto/HompageTitlePicture.png" />
+                    <div class="text">
+                        Startpagina van de nieuwe versie van de website
+                    </div>
+                </div>
 
-      <div class="mySlides fade">
-        <img class="slideShowPictures" src="/Foto/HompageTitlePicture.png" height="500" width="1000">
-        <div class="text">Startpagina van de nieuwe versie van de website</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img class="slideShowPictures" src="/Foto/FotoCodeHompagina.png" height="500" width="1000">
-        <div class="text">Code voor het maken van de website</div>
-      </div>
-      <!-- Next and previous buttons -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </div>
-  <div class="uitleg">
-    <div class="uitlegTitel">
-      <h3><u>Uitleg over wat we hebben gedaan</u></h3>
-    </div>
-    <div class="uitlegOverWatDoen">
-      <div class="uitlegAlgemeen uitlegKader">
-        <div id="uitlegAlgemeenTitel">
-            <h2>Algemeen</h2>
-          </div>
-          <div class="uitlegAlgemeenInfo">
-            <p>
-              Wij vormen het team verantwoordelijk voor de ontwikkeling van een website. Een van de voornaamste aspecten van dit proces is het opzetten van een duidelijke structuur, waardoor alle informatie gemakkelijk en snel toegankelijk is. Daarom hebben we ons uiterste best gedaan om alles zo goed mogelijk te organiseren. Bovendien is het kleurenpalet van essentieel belang. Een overvloed aan verschillende kleuren kan een gevoel van wanorde veroorzaken.</p>
-          </div>
+                <div class="mySlides fade">
+                    <img
+                        class="slideShowPictures"
+                        src="/Foto/FotoCodeHompagina.png" />
+                    <div class="text">Code voor het maken van de website</div>
+                </div>
+            </div>
+            <div>
+                <!-- Next and previous buttons -->
+                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            </div>
         </div>
-      <div class="uitlegStart uitlegKader">
-        <div id="uitlegStartTitel">
-          <h2>Start</h2>
+        <div class="uitleg">
+            <div class="uitlegTitel">
+                <h3><u>Uitleg over wat we hebben gedaan</u></h3>
+            </div>
+            <div class="uitlegOverWatDoen">
+                <div class="uitlegAlgemeen uitlegKader">
+                    <div id="uitlegAlgemeenTitel">
+                        <h2>Algemeen</h2>
+                    </div>
+                    <div class="uitlegAlgemeenInfo">
+                        <p>
+                            Wij vormen het team verantwoordelijk voor de
+                            ontwikkeling van een website. Een van de voornaamste
+                            aspecten van dit proces is het opzetten van een
+                            duidelijke structuur, waardoor alle informatie
+                            gemakkelijk en snel toegankelijk is. Daarom hebben
+                            we ons uiterste best gedaan om alles zo goed
+                            mogelijk te organiseren. Bovendien is het
+                            kleurenpalet van essentieel belang. Een overvloed
+                            aan verschillende kleuren kan een gevoel van wanorde
+                            veroorzaken.
+                        </p>
+                    </div>
+                </div>
+                <div class="uitlegStart uitlegKader">
+                    <div id="uitlegStartTitel">
+                        <h2>Start</h2>
+                    </div>
+                    <div class="uitlegStartInfo">
+                        <p>
+                            In het begin van het project hebben we wat tijd
+                            moeten besteden aan het vinden van de juiste aanpak.
+                            We begonnen met het maken van een eerste versie van
+                            de website, maar al snel werd duidelijk dat deze
+                            niet voldeed aan onze eisen en doelstellingen. Dit
+                            betekende dat we opnieuw moesten beginnen, wat
+                            natuurlijk wat tijd kostte. We hebben verschillende
+                            uitdagingen moeten overwinnen en momenten van
+                            twijfel gehad, maar gelukkig hadden we al een basis
+                            gelegd met een goede structuur. Dit heeft ons
+                            geholpen om door te zetten.
+                        </p>
+                    </div>
+                </div>
+                <div class="uitlegMidden uitlegKader">
+                    <div id="uitlegMiddenTitel">
+                        <h2>Midden</h2>
+                    </div>
+                    <div class="uitlegMiddenInfo">
+                        <p>
+                            Nadat we een stevige basis hadden gelegd met de
+                            nieuwe versie van de website, konden we aan de slag
+                            met het invullen van de inhoud en het structureren
+                            ervan. We hebben verschillende pagina's aangemaakt
+                            en deze verbonden met de navigatiebalk, waaronder de
+                            homepage, doelen, deelnemers en groepen. Toen deze
+                            structuur stond, zijn we begonnen met het toevoegen
+                            van uitleg aan elke pagina en hebben we ons gericht
+                            op het maken van de inhoud zo aantrekkelijk en
+                            interessant mogelijk
+                        </p>
+                    </div>
+                </div>
+                <div class="uitlegEind uitlegKader">
+                    <div id="uitlegEindTitel">
+                        <h2>Eind</h2>
+                    </div>
+                    <div class="uitlegEindInfo">
+                        <p>uitleg</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="uitlegStartInfo">
-          <p>
-            In het begin van het project hebben we wat tijd moeten besteden aan het vinden van de juiste aanpak. We begonnen met het maken van een eerste versie van de website, maar al snel werd duidelijk dat deze niet voldeed aan onze eisen en doelstellingen. Dit betekende dat we opnieuw moesten beginnen, wat natuurlijk wat tijd kostte. We hebben verschillende uitdagingen moeten overwinnen en momenten van twijfel gehad, maar gelukkig hadden we al een basis gelegd met een goede structuur. Dit heeft ons geholpen om door te zetten.</p>
+        <div class="gebruikteTools">
+            <div id="gebruikteToolsTitel">
+                <h3>
+                    <u>De tools en programmeertalen die we gebruikt hebben</u>
+                </h3>
+            </div>
+            <div class="programmeerTalen">
+                <div id="programmeerTalenTitel">
+                    <h2><u>programmeertalen</u></h2>
+                </div>
+                <div class="html">
+                    <div id="htmlTitel">
+                        <h2>HTML</h2>
+                    </div>
+                    <div id="htmlFoto">
+                        <img
+                            src="/Foto/htmlLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: contain" />
+                    </div>
+                    <div class="htmlInfo">
+                        <p>Dit is de taal om de site visueel te maken</p>
+                    </div>
+                </div>
+                <div class="css">
+                    <div id="cssTitel">
+                        <h2>CSS</h2>
+                    </div>
+                    <div class="cssFoto">
+                        <img
+                            src="/Foto/cssLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: contain" />
+                    </div>
+                    <p>De taal om de opmaak van de site te doen</p>
+                </div>
+                <div class="javascript">
+                    <div id="javascriptTitel">
+                        <h2>Javascript</h2>
+                    </div>
+                    <div id="javascriptFoto">
+                        <img
+                            src="/Foto/javaScriptLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: cover" />
+                    </div>
+                    <p>
+                        de taal om speciale effecten toe te voegen aan de site
+                    </p>
+                </div>
+            </div>
+            <div class="tools">
+                <div id="toolsTitel">
+                    <h2><u>Tools</u></h2>
+                </div>
+                <div class="canva">
+                    <div class="canvaFoto">
+                        <img
+                            src="/Foto/canvaLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: contain" />
+                    </div>
+                    <p>canva</p>
+                </div>
+                <div class="chatGPT">
+                    <div class="chatGPTFoto">
+                        <img
+                            src="/Foto/chatGPTLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: contain" />
+                    </div>
+                    <p>chatGPT</p>
+                </div>
+                <div class="netlify">
+                    <div class="netlifyFoto">
+                        <img
+                            src="/Foto/netlifyLogo.png"
+                            height="330"
+                            width="330"
+                            style="object-fit: contain" />
+                    </div>
+                    <p>netlify</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="uitlegMidden uitlegKader">
-        <div id="uitlegMiddenTitel">
-        <h2>Midden</h2>
-        </div>
-        <div class="uitlegMiddenInfo">
-          <p>Nadat we een stevige basis hadden gelegd met de nieuwe versie van de website, konden we aan de slag met het invullen van de inhoud en het structureren ervan. We hebben verschillende pagina's aangemaakt en deze verbonden met de navigatiebalk, waaronder de homepage, doelen, deelnemers en groepen. Toen deze structuur stond, zijn we begonnen met het toevoegen van uitleg aan elke pagina en hebben we ons gericht op het maken van de inhoud zo aantrekkelijk en interessant mogelijk</p>
-        </div>
-      </div>
-      <div class="uitlegEind uitlegKader">
-        <div id="uitlegEindTitel">
-        <h2>Eind</h2>
-        </div>
-        <div class="uitlegEindInfo">
-          <p>uitleg</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="gebruikteTools">
-    <div id="gebruikteToolsTitel">
-      <h3><u>De tools en programmeertalen die we gebruikt hebben</u></h3>
-    </div>
-    <div class="programmeerTalen">
-      <div id="programmeerTalenTitel">
-        <h2><u>programmeertalen</u></h2>
-      </div>
-      <div class="html">
-        <div id="htmlTitel">
-          <h2>HTML</h2>
-        </div>
-        <div id="htmlFoto">
-          <img src="/Foto/htmlLogo.png" height="330" width="330" style="object-fit: contain;">
-        </div>
-        <div class="htmlInfo">
-          <p>Dit is de taal om de site visueel te maken</p>
-        </div>
-      </div>
-      <div class="css">
-        <div id="cssTitel">
-          <h2>CSS</h2>
-        </div>
-        <div class="cssFoto">
-          <img src="/Foto/cssLogo.png" height="330" width="330" style="object-fit: contain;">
-        </div>
-        <p>De taal om de opmaak van de site te doen</p>
-      </div>
-      <div class="javascript">
-        <div id="javascriptTitel">
-          <h2>Javascript</h2>
-        </div>
-        <div id="javascriptFoto">
-          <img src="/Foto/javaScriptLogo.png" height="330" width="330" style="object-fit: cover;">
-        </div>
-        <p>de taal om speciale effecten toe te voegen aan de site</p>
-      </div>
-    </div>
-    <div class="tools">
-      <div id="toolsTitel">
-        <h2><u>Tools</u></h2>
-      </div>
-      <div class="canva">
-        <div class="canvaFoto">
-          <img src="/Foto/canvaLogo.png" height="330" width="330" style="object-fit: contain;">
-        </div>
-        <p>canva</p>
-      </div>
-      <div class="chatGPT">
-        <div class="chatGPTFoto">
-          <img src="/Foto/chatGPTLogo.png" height="330" width="330" style="object-fit: contain;">
-        </div>
-        <p>chatGPT</p>
-      </div>
-      <div class="netlify">
-        <div class="netlifyFoto">
-          <img src="/Foto/netlifyLogo.png" height="330" width="330" style="object-fit: contain;">
-        </div>
-        <p>netlify</p>
-      </div>
-    </div>
-  </div>
-</body>
+    </body>
 </html>
