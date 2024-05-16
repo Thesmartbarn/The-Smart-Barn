@@ -25,7 +25,7 @@ body{
   margin-top: 5vh;
 
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
 }
 
 #HoofdDoelInfo{
@@ -37,8 +37,9 @@ body{
 
 #TussenDoelenTitel{
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   grid-row: 1;
+  color: black;
 
 }
 
