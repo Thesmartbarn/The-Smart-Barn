@@ -8,6 +8,6 @@ pwm.start(50)
 
 while True:
     PwmWaarde = input("geef een pmw waarde in: ")
-    pwm.ChangeDutyCycle(PwmWaarde)
+    pwm.ChangeDutyCycle(int(PwmWaarde))
 
     pwm.stop()
