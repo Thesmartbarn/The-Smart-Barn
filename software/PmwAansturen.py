@@ -7,7 +7,5 @@ pwm = GPIO.PWM(18, 1000)
 pwm.start(50)
 
 while True:
-    PwmWaarde = input("geef een pmw waarde in: ")
-    pwm.ChangeDutyCycle(int(PwmWaarde))
-
-    pwm.stop()
+    PwmWaarde = int(input("geef een pmw waarde in: "))
+    pwm.ChangeDutyCycle(PwmWaarde)
