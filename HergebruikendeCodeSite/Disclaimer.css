@@ -17,3 +17,7 @@ Disclaimer{
     color: white;
     
 }
+
+#Copyrights > p {
+    margin-bottom: 0px;
+}
