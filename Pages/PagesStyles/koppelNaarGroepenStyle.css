@@ -42,7 +42,7 @@
 
 .kader{
     width: 28vw;
-    height: 70vh;
+    height: 60vh;
 
     padding-top: 1vh;
     padding-bottom: 1vh;
@@ -55,5 +55,35 @@
     border: 1vh solid rgb(220, 220, 220);
     border-radius: 3vh;
     text-align: center;
-    
+}
+
+@media (max-width:1800px){
+    .kader{
+        height: 50vh;
+    }
+}
+
+@media (max-width:1400px){
+    .kader{
+        height: 40vh;
+    }
+}
+
+@media (max-width:1000px){
+    .kader{
+        height: 32vh;
+    }
+}
+
+@media (max-width:800px){
+    .OverkoepelendeDiv{
+        display: block;
+    }
+
+    .kader{
+        width: 75vw;
+        height: 60vh;
+
+        margin-left: 12vw;
+    }
 }
