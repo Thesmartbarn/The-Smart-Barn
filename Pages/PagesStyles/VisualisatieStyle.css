@@ -159,3 +159,56 @@ grid-column: 2;
 
   text-align: center;
 }
+
+@media (max-width:1400px){
+  .uitlegOverWatDoen{
+    display: block;
+  }
+
+  .programmeerTalen{
+    display: block;
+  }
+
+  .html{
+    margin-bottom: 3vh;
+  }
+
+  .css{
+    margin-bottom: 3vh;
+  }
+
+  .javascript{
+    margin-bottom: 3vh;
+  }
+
+  .tools{
+    display: block;
+  }
+
+  .canva{
+    margin-bottom: 3vh;
+  }
+
+  .chatGPT{
+    margin-bottom: 3vh;
+  }
+
+  .netlify{
+    margin-bottom: 3vh;
+  }
+
+  .uitlegKader{
+    width: 75vw;
+    height: 15vh;
+    
+    margin-left: 12.5vw;
+  }
+
+
+}
+
+@media (max-width:800px){
+  .uitlegKader{
+    height: 37.5vh;
+  }
+}
