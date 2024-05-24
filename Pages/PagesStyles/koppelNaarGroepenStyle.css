@@ -42,7 +42,7 @@
 
 .kader{
     width: 28vw;
-    height: 60vh;
+    height: 70vh;
 
     padding-top: 1vh;
     padding-bottom: 1vh;
@@ -57,13 +57,13 @@
     text-align: center;
 }
 
-@media (max-width:1800px){
+@media (max-width:1400px){
     .kader{
         height: 50vh;
     }
 }
 
-@media (max-width:1400px){
+@media (max-width:1200px){
     .kader{
         height: 40vh;
     }
