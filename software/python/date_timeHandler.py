@@ -34,5 +34,11 @@ def getHourFromDateTime(dateTime):
 def getDayFromDateTime(dateTime):
     return dateTime.split(" ")[0]
 
+def csvTimeFormat() -> str:
+    return f"{day()}-{month()}-{year()} {hour()}:{minute()}"
+    
+if __name__ == "__main__":
+    print(csvTimeFormat())
+
 
 
