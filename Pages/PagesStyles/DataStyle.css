@@ -11,3 +11,28 @@ h3{
     font-size: 200%;
     text-align: center;
 }
+
+.checkBoxContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.checkBoxContainer {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkBoxContainer>label {
+  margin-right: 3px;
+}
+
+:nth-child(odd of .checkBoxContainer>label) {
+  color: red;
+}
+
+:nth-child(even of .checkBoxContainer>label) {
+  color: blue;
+  margin-left: 20px;
+}

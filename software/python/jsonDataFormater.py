@@ -33,7 +33,10 @@ class GraphSimulator:
             self.simulatedGraphData["day"].pop(0)
             
         # fan speed day long
-        self.simulatedGraphData["fanDay"].append(csvRow[3])
+        self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), csvRow[3]])
+        
+        if len(self.simulatedGraphData["fanDay"]) > 1440:
+            self.simulatedGraphData["fanDay"].pop(0)
         
     def simulateMock(self, csvRow):
         time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
