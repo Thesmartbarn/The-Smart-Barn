@@ -64,7 +64,6 @@ body{
 }
 
 .uitlegKader{
-  height: 20vh;
   width: 35vw;
 
   margin-top: 1vh;
@@ -199,16 +198,9 @@ grid-column: 2;
 
   .uitlegKader{
     width: 75vw;
-    height: 15vh;
     
     margin-left: 12.5vw;
   }
 
 
-}
-
-@media (max-width:800px){
-  .uitlegKader{
-    height: 37.5vh;
-  }
 }
