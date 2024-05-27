@@ -5,11 +5,36 @@
     margin: 0px;
   }
 
+:root {
+  --fanSpeed: 1s;
+}
+
 h3{
     margin-top: 6vh;
     margin-bottom: 2vh;
     font-size: 200%;
     text-align: center;
+}
+
+#visualFan {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#visualFan > img {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  animation: visualFan var(--fanSpeed) linear infinite;
+  
+}
+
+@keyframes visualFan {
+  0% {
+    transform: rotateZ(360deg);
+  }
 }
 
 .checkBoxContainer {
