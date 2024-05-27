@@ -5,23 +5,14 @@ def checkIfTempIsGood(temperature: float, humidity: float) -> tuple[bool, float]
     return temperature < maxTemp, maxTemp
 # # A = 10 | B = -19 | C = 31.5
 
-def calculateScore(): 
-    pass
-
-def calculateFanSpeed(temperature, humidity):
+def getFanSpeed(temperature, humidity):
     temperatureStatus, maxTemp = checkIfTempIsGood(temperature, humidity)
     if temperatureStatus:
         if temperature / maxTemp > 0.80:
-            return min(255, 255 * ((temperature / maxTemp) - 0.8) * 5)
+            return min(100, 100 * ((temperature / maxTemp) - 0.8) * 5)
         return 0
-    else:
-        return 255
+    return 100
 
-def invertFanSpeed(temperature, humidity):
-    return abs(calculateFanSpeed(temperature, humidity) - 255)
-    
-def getFanSpeed(temperature, humidity):
-    return invertFanSpeed(temperature, humidity)
     
     
 if __name__ == "__main__":
