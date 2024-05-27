@@ -33,7 +33,7 @@ class GraphSimulator:
             self.simulatedGraphData["day"].pop(0)
             
         # fan speed day long
-        self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), csvRow[3]])
+        self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), float(csvRow[3])])
         
         if len(self.simulatedGraphData["fanDay"]) > 1440:
             self.simulatedGraphData["fanDay"].pop(0)
@@ -59,6 +59,12 @@ class GraphSimulator:
         
         if len(self.simulatedGraphData["day"]) > 365:
             self.simulatedGraphData["day"].pop(0)
+            
+        # fan speed day long
+        self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), csvRow[3]])
+        
+        if len(self.simulatedGraphData["fanDay"]) > 1440:
+            self.simulatedGraphData["fanDay"].pop(0)
             
             
     @staticmethod
@@ -87,7 +93,7 @@ class JsonDataFormater(GraphSimulator):
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
-                    super().simulateMock(row)
+                    super().simulate(row)
         self.simulatedGraphData["currentFanSpeed"] = currentFanSpeed
         self._writeDataToJson(self.simulatedGraphData)
         
