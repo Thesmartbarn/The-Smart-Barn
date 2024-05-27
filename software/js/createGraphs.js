@@ -6,10 +6,12 @@ window.onload = function () {
         data: [
             {
                 type: "line",
+                lineColor: "red",
                 dataPoints: graphTempMin,
             },
             {
                 type: "line",
+                lineColor: "blue",
                 dataPoints: graphHumMin,
             },
         ],
@@ -27,10 +29,12 @@ window.onload = function () {
         data: [
             {
                 type: "line",
+                lineColor: "red",
                 dataPoints: graphTempHour,
             },
             {
                 type: "line",
+                lineColor: "blue",
                 dataPoints: graphHumHour,
             },
         ],
@@ -47,10 +51,12 @@ window.onload = function () {
         data: [
             {
                 type: "line",
+                lineColor: "red",
                 dataPoints: graphTempDay,
             },
             {
                 type: "line",
+                lineColor: "blue",
                 dataPoints: graphHumDay,
             },
         ],
@@ -67,6 +73,7 @@ window.onload = function () {
         data: [
             {
                 type: "line",
+                lineColor: "green",
                 dataPoints: graphFan,
             },
         ],
