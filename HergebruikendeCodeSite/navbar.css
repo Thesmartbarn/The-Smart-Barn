@@ -74,13 +74,17 @@ nav {
   position: absolute;
   min-width: calc(70vw/ var(--amountOfNavbarButtons));
 
-  background-color: whitesmoke;
+
+  background-color: lightgray;
 }
 
 .groepenDropdownContent a{
   color: black;
   text-decoration: none;
   display: block;
+
+  border: 0.2vh solid lightgray;
+
 
   padding-top: 1vh;
   padding-bottom: 1vh;
