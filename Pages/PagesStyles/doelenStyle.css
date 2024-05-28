@@ -41,6 +41,9 @@ body{
   grid-row: 1;
   color: black;
 
+  border-top: 0.3vh solid gray;
+  padding-top: 5vh;
+
 }
 
 .TussenDoelen{
