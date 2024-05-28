@@ -10,10 +10,12 @@ def datenow():
     return str(date.today())
 
 def minute():
-    return datetime.now().minute
+    _min = datetime.now().minute
+    return str(_min) if _min > 10 else f"0{_min}"
 
 def hour():
-    return datetime.now().hour
+    _hour = datetime.now().hour
+    return str(_hour) if _hour > 10 else f"0{_hour}"
 
 def day():
     return date.today().day

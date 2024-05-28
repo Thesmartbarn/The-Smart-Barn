@@ -14,23 +14,8 @@ class GraphSimulator:
         time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
             
-        if self.currentHour != date_timeHandler.hour():
-            time = date_timeHandler.getHourFromDateTime(csvRow[0])
-            hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
-            self.simulatedGraphData["hour"].append(hourData)
-            
-        if self.currentDay != date_timeHandler.day():
-            dayData = [date_timeHandler.getHourFromDateTime(csvRow[0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
-            self.simulatedGraphData["day"].append(dayData)
-            
         if len(self.simulatedGraphData["min"]) > 60:
             self.simulatedGraphData["min"].pop(0)
-        
-        if len(self.simulatedGraphData["hour"]) > 24:
-            self.simulatedGraphData["hour"].pop(0)
-        
-        if len(self.simulatedGraphData["day"]) > 365:
-            self.simulatedGraphData["day"].pop(0)
             
         # fan speed day long
         self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), float(csvRow[3])])
@@ -94,6 +79,24 @@ class JsonDataFormater(GraphSimulator):
                 csvData = csv.reader(csvFile)
                 for row in csvData:
                     super().simulate(row)
+        
+        if self.currentHour != date_timeHandler.hour():
+            time = date_timeHandler.getHourFromDateTime(self.simulatedGraphData["min"][0])
+            hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
+            self.simulatedGraphData["hour"].append(hourData)
+            self.currentHour = date_timeHandler.hour()
+            
+        if self.currentDay != date_timeHandler.day():
+            self.currentDay = date_timeHandler.day()
+            dayData = [date_timeHandler.getHourFromDateTime(self.simulatedGraphData["min"][0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            self.simulatedGraphData["day"].append(dayData)
+            
+        if len(self.simulatedGraphData["hour"]) > 24:
+            self.simulatedGraphData["hour"].pop(0)
+        
+        if len(self.simulatedGraphData["day"]) > 365:
+            self.simulatedGraphData["day"].pop(0)
+            
         self.simulatedGraphData["currentFanSpeed"] = currentFanSpeed
         self._writeDataToJson(self.simulatedGraphData)
         

@@ -26,7 +26,7 @@ from jsonDataFormater import JsonDataFormater
 jsonDataFormater = JsonDataFormater(GRAPH_DATA_SAVE_FILEPATH)
 
 import dataCalculator
-from date_timeHandler import getDayFromDateTime, getMinuteFromDateTime, datetimeFormat, csvTimeFormat
+from date_timeHandler import csvTimeFormat
 
 from time import time, sleep
 import os
@@ -42,7 +42,7 @@ while True:
         temp = randomAlgorithm(temp)
         hum = randomAlgorithm(hum)
         
-        fan = int(dataCalculator.calculateFanSpeed(temp, hum) / 2.55)
+        fan = dataCalculator.calculateFanSpeed(temp, hum)
         
         csvHandler.writeData([csvTimeFormat(), temp, hum, fan])
         jsonDataFormater.overWriteJsonFileWithNewData(fan)
