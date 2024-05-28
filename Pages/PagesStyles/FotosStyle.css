@@ -3,3 +3,8 @@
     margin: 0;
     transition: 500ms;
 }
+
+.fotos{
+    width: 95vw;
+    margin-left: 2.5vw;
+}
