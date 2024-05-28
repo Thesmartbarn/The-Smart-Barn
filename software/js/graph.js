@@ -59,7 +59,10 @@ function getData() {
             rebuildGraphList(data["hour"], graphTempHour, graphHumHour);
             rebuildGraphList(data["day"], graphTempDay, graphHumDay);
             rebuildFanList(data["fanDay"], graphFan);
+
             setVisualFanSpeed(parseInt(data["currentFanSpeed"]));
+
+            setInfo(data["currentFanSpeed"], data["updateTime"]);
 
             renderGraphs();
 
@@ -111,4 +114,9 @@ function setVisualFanSpeed(currentFanSpeed) {
     let fanSpeedFrequencyInSeconds =
         currentFanSpeed == 0 ? 0 : Math.max(reversedFanSpeed / 10, 1);
     root.style.setProperty("--fanSpeed", `${fanSpeedFrequencyInSeconds}s`);
+}
+
+function setInfo(fanSpeed, updateDate) {
+    document.getElementById("infoFanSpeed").innerHTML = fanSpeed;
+    document.getElementById("infoUpdateTime").innerHTML = updateDate;
 }
