@@ -1,24 +1,13 @@
-<script
-    type="text/javascript"
-    src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<link
-    rel="stylesheet"
-    type="text/css"
-    href="/HergebruikendeCodeSite/navbar.css" />
-<link
-    rel="stylesheet"
-    type="text/css"
-    href="/HergebruikendeCodeSite/hamburgerMenu/hamburgerMenu.css" />
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="stylesheet" type="text/css" href="/HergebruikendeCodeSite/navbar.css" />
+<link rel="stylesheet" type="text/css" href="/HergebruikendeCodeSite/hamburgerMenu/hamburgerMenu.css" />
 <!-- load global vars on all pages -->
 <link rel="stylesheet" type="text/css" href="/vars.css" />
 
 <div id="fixed">
     <nav>
         <button id="hamburgerMenu">
-            <input
-                type="checkbox"
-                id="hamburgerCheckBox"
-                class="hamburgerCheckBox visuallyHidden"
+            <input type="checkbox" id="hamburgerCheckBox" class="hamburgerCheckBox visuallyHidden"
                 onclick="hamburgerMenuActions()" />
             <label for="hamburgerCheckBox" style="cursor: pointer">
                 <div class="hamburger hamburger4">
@@ -31,40 +20,37 @@
             </label>
         </button>
         <div id="startPagina">
-            <button
-                class="navbutton startpage icon"
-                onclick="location.href='/index.html'">
-                <img
-                    src="/Foto/Barn_icoon.png"
-                    height="25"
-                    width="25"
-                    id="navbar_logo" />
+            <button class="navbutton startpage icon" onclick="location.href='/index.html'">
+                <img src="/Foto/Barn_icoon.png" height="25" width="25" id="navbar_logo" />
             </button>
-            <button
-                class="navbutton startpage"
-                id="home"
-                onclick="location.href='/index.html'">
+            <button class="navbutton startpage" id="home" onclick="location.href='/index.html'">
                 The Smart Barn
             </button>
         </div>
-        <button
-            class="navbutton"
-            id="doelen"
-            onclick="location.href='/Pages/Doelen.html'">
+        <button class="navbutton" id="doelen" onclick="location.href='/Pages/Doelen.html'">
             Doelen
         </button>
-        <button
-            class="navbutton"
-            id="deelnemers"
-            onclick="location.href='/Pages/Deelnemers.html'">
+        <button class="navbutton" id="deelnemers" onclick="location.href='/Pages/Deelnemers.html'">
             Deelnemers
         </button>
-        <button
+        <!-- <button
             class="navbutton"
             id="groepen"
             onclick="location.href='/pages/koppelNaarGroepen.html'">
             Groepen
-        </button>
+        </button> -->
+
+        <div class="groepenDropdown">
+            <button class="navbutton groepenButton"
+                onclick="location.href= '/Pages/koppelNaarGroepen.html'">Groepen</button>
+            <div class="groepenDropdownContent">
+                <a href="/Pages/Visualisatie.html">Visualisatie</a>
+                <a href="/Pages/Software.html">Software</a>
+                <a href="/Pages/Hardware.html">Hardware</a>
+            </div>
+        </div>
+
+
         <button class="navbutton" id="login">Login</button>
     </nav>
     <div id="mobileMenu" style="display: none" class="hideMobileMenu">
