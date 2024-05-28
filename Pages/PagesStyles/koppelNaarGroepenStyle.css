@@ -3,12 +3,20 @@
     transition: 500ms;
 }
 
+a{
+    text-decoration: none;
+}
+
+img{
+    border-radius: 3vh;
+}
+
 .OverkoepelendeDiv{
     display: grid;
 }
 
 .PaginaTitel{
-    font-size: 500%;
+    font-size: 400%;
 
     text-align: center;
 }
@@ -16,14 +24,26 @@
 #VisualisatieTitel{
     font-size: 150%;
     margin-bottom: 7vh;
+
+    color: rgb(156, 144, 94);
+    text-decoration: none;
 }
 
 #SoftwareTitel{
     font-size: 150%;
+
+    color: rgb(25, 135, 84);
+    text-decoration: none;
+
 }
 
 #HardwareTitel{
     font-size: 150%;
+
+    color: rgb(13, 170, 211);
+    text-decoration: none;
+
+
 }
 
 .Visualisatie{
@@ -43,17 +63,15 @@
 
 .kader{
     width: 28vw;
-    height: 70vh;
+    height: 62vh;
 
-    padding-top: 1vh;
     padding-bottom: 1vh;
 
     margin-left: 2.5vw;
-    margin-bottom: 15vh;
 
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(235, 235, 235);
 
-    border: 1vh solid rgb(220, 220, 220);
+    border: 0.2vh solid black;
     border-radius: 3vh;
     text-align: center;
 }
@@ -72,19 +90,21 @@
 
 @media (max-width:1000px){
     .kader{
-        height: 32vh;
+        height: 37vh;
     }
 }
 
 @media (max-width:800px){
     .OverkoepelendeDiv{
         display: block;
+
     }
 
     .kader{
         width: 75vw;
-        height: 60vh;
+        height: 70vh;
 
         margin-left: 12vw;
+        margin-bottom: 15vh;
     }
 }
