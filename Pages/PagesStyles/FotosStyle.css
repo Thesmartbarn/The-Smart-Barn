@@ -4,6 +4,10 @@
     transition: 500ms;
 }
 
+body{
+    background-color: lightcyan;
+}
+
 .fotos{
     width: 95vw;
     margin-left: 2.5vw;
