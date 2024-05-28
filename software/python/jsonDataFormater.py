@@ -3,7 +3,7 @@ from fileExistenceChecker import checkIfFileExists
 
 class GraphSimulator:  
     def __init__(self) -> None:
-        self.currentHour = date_timeHandler.hour()
+        self.currentHour = int(date_timeHandler.hour())
         self.currentDay = date_timeHandler.day()
         self.currentYear = date_timeHandler.year()
         self.simulatedGraphData = {"updateTime": "", "currentFanSpeed": 0, "min": [], "hour": [], "day": [], "fanDay": []}
@@ -80,12 +80,12 @@ class JsonDataFormater(GraphSimulator):
                 for row in csvData:
                     super().simulate(row)
         
-        if self.currentHour != date_timeHandler.hour():
+        if self.currentHour != int(date_timeHandler.hour()):
             h = int(date_timeHandler.hour()) - 1
             time = f"{f"0{h}" if h < 10 else h}:00"
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
-            self.currentHour = date_timeHandler.hour()
+            self.currentHour = int(date_timeHandler.hour())
             
         if self.currentDay != date_timeHandler.day():
             d = date_timeHandler.day() - 1
