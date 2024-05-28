@@ -1,5 +1,5 @@
 :root {
-  --amountOfNavbarButtons: 4;
+  --amountOfNavbarButtons: 5;
 }
 
 #fixed{
@@ -61,6 +61,38 @@ nav {
   cursor: pointer;
 
 }
+
+.groepenDropdown{
+  position: relative;
+  display: inline-block;
+
+  text-align: center;
+}
+
+.groepenDropdownContent{
+  display: none;
+  position: absolute;
+  min-width: calc(70vw/ var(--amountOfNavbarButtons));
+
+  background-color: whitesmoke;
+}
+
+.groepenDropdownContent a{
+  color: black;
+  text-decoration: none;
+  display: block;
+
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.groepenDropdownContent a:hover{
+  background-color: var(--primaryColor);
+  border: 0.2vh solid darkslategray;
+}
+
+.groepenDropdown:hover .groepenDropdownContent{display: block;}
+
 
 #startPagina {
   display: flex;
