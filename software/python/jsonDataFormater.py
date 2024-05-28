@@ -6,7 +6,7 @@ class GraphSimulator:
         self.currentHour = date_timeHandler.hour()
         self.currentDay = date_timeHandler.day()
         self.currentYear = date_timeHandler.year()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
+        self.simulatedGraphData = {"updateTime": "", "currentFanSpeed": 0, "min": [], "hour": [], "day": [], "fanDay": []}
         
         self.mockCounter = 0
     
@@ -73,7 +73,7 @@ class JsonDataFormater(GraphSimulator):
     
     def overWriteJsonFileWithNewData(self, currentFanSpeed: int):
         self.getYearSpanCsvPaths()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
+        self.simulatedGraphData = {"updateTime": "", "currentFanSpeed": 0, "min": [], "hour": [], "day": [], "fanDay": []}
         for csvFilePath in self.yearSpanCsvPaths:
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
@@ -81,15 +81,18 @@ class JsonDataFormater(GraphSimulator):
                     super().simulate(row)
         
         if self.currentHour != date_timeHandler.hour():
-            time = date_timeHandler.getHourFromDateTime(self.simulatedGraphData["min"][0])
+            h = int(date_timeHandler.hour()) - 1
+            time = f"{f"0{h}" if h < 10 else h}:00"
             hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
             self.simulatedGraphData["hour"].append(hourData)
             self.currentHour = date_timeHandler.hour()
             
         if self.currentDay != date_timeHandler.day():
-            self.currentDay = date_timeHandler.day()
-            dayData = [date_timeHandler.getHourFromDateTime(self.simulatedGraphData["min"][0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            d = date_timeHandler.day() - 1
+            time = f"{d}-{date_timeHandler.month()}-{date_timeHandler.year()}"
+            dayData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
             self.simulatedGraphData["day"].append(dayData)
+            self.currentDay = date_timeHandler.day()
             
         if len(self.simulatedGraphData["hour"]) > 24:
             self.simulatedGraphData["hour"].pop(0)
@@ -98,6 +101,7 @@ class JsonDataFormater(GraphSimulator):
             self.simulatedGraphData["day"].pop(0)
             
         self.simulatedGraphData["currentFanSpeed"] = currentFanSpeed
+        self.simulatedGraphData["updateTime"] = date_timeHandler.csvTimeFormat()
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):
