@@ -16,6 +16,18 @@ h3{
     text-align: center;
 }
 
+#infoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#infoContainer > p {
+  padding: 20px;
+  background-color: lightgray;
+  border-radius: 20px;
+  color: black;
+}
+
 #visualFan {
   margin-top: 20px;
   display: flex;
