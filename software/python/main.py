@@ -1,5 +1,6 @@
 from fileExistenceChecker import checkIfFileExists
-# import fanSwitch
+import fanSwitch
+import fanControl
 import os
 from time import time, sleep
 from date_timeHandler import csvTimeFormat
@@ -37,23 +38,29 @@ INTERVAL = 60
 
 
 while True:
-    currentTime = time()
-    if currentTime - previousTime >= INTERVAL:
+    try:
+        currentTime = time()
+        if currentTime - previousTime >= INTERVAL:
 
-        temp = randomAlgorithm(temp)
-        hum = randomAlgorithm(hum)
+            temp = fanControl.readTemperatureSensor()
+            hum = randomAlgorithm(hum)
 
-        fan = dataCalculator.getFanSpeed(temp, hum)
-        # fanSwitch.setFanStatus(fan)
+            fan = dataCalculator.getFanSpeed(temp, hum)
+            fanSwitch.setFanStatus(fan)
+            fanControl.setFanSpeed(fan)
 
-        csvHandler.writeData([csvTimeFormat(), temp, hum, fan])
-        jsonDataFormater.overWriteJsonFileWithNewData(fan)
+            csvHandler.writeData([csvTimeFormat(), temp, hum, fan])
+            jsonDataFormater.overWriteJsonFileWithNewData(fan)
 
-        os.system(r"git add software/graphData.json")
-        os.system(
-            f'git commit -m "automatic data push {csvTimeFormat()} [skip netlify]"')
-        os.system('git push')
+            os.system(r"git add software/graphData.json")
+            os.system(
+                f'git commit -m "automatic data push {csvTimeFormat()} [skip netlify]"')
+            os.system('git push')
 
-        previousTime = currentTime
+            previousTime = currentTime
 
-    sleep(0.5)
+        sleep(0.5)
+    except Exception as error:
+        fanSwitch.setFanStatus(100)
+        fanControl.setFanSpeed(100)
+        raise Exception(error)
