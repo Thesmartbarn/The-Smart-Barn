@@ -1,58 +1,59 @@
+from fileExistenceChecker import checkIfFileExists
+# import fanSwitch
+import os
+from time import time, sleep
+from date_timeHandler import csvTimeFormat
+import dataCalculator
+from jsonDataFormater import JsonDataFormater
+from csvHandler import CSVhandler
 import random
 temp = 0
 hum = 0
+
+
 def randomAlgorithm(previousNumber):
-    for i in range(random.randint(1,20)):
+    for i in range(random.randint(1, 20)):
         choice = random.randint(-10, 10)
         if i == random.randint(1, 20):
             break
     newNumber = previousNumber + choice
     if not newNumber in range(0, 101):
         newNumber = previousNumber
-    return newNumber  
+    return newNumber
 
-from fileExistenceChecker import checkIfFileExists
 
 GRAPH_DATA_SAVE_FILEPATH = "software/graphData.json"
 if not checkIfFileExists(GRAPH_DATA_SAVE_FILEPATH):
     open(GRAPH_DATA_SAVE_FILEPATH, "w").close()
 
-from csvHandler import CSVhandler
 
 csvHandler = CSVhandler()
 
-from jsonDataFormater import JsonDataFormater
-
 jsonDataFormater = JsonDataFormater(GRAPH_DATA_SAVE_FILEPATH)
-
-import dataCalculator
-from date_timeHandler import getDayFromDateTime, getMinuteFromDateTime, datetimeFormat, csvTimeFormat
-
-from time import time, sleep
-import os
 
 currentTime = time()
 previousTime = 0
 INTERVAL = 60
 
+
 while True:
     currentTime = time()
     if currentTime - previousTime >= INTERVAL:
-        
+
         temp = randomAlgorithm(temp)
         hum = randomAlgorithm(hum)
-        
-        fan = int(dataCalculator.calculateFanSpeed(temp, hum) / 2.55)
-        
+
+        fan = dataCalculator.getFanSpeed(temp, hum)
+        # fanSwitch.setFanStatus(fan)
+
         csvHandler.writeData([csvTimeFormat(), temp, hum, fan])
         jsonDataFormater.overWriteJsonFileWithNewData(fan)
-        
+
         os.system(r"git add software/graphData.json")
-        os.system(f'git commit -m "automatic data push {csvTimeFormat()} [skip netlify]"')
+        os.system(
+            f'git commit -m "automatic data push {csvTimeFormat()} [skip netlify]"')
         os.system('git push')
-        
+
         previousTime = currentTime
-    
-    
+
     sleep(0.5)
-    

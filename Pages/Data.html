@@ -48,7 +48,16 @@
 
     <body>
         <navigatiebalk></navigatiebalk>
-        <h3>Data</h3>
+        <div id="infoContainer">
+            <p>laatst geüpdated: <span id="infoUpdateTime"></span> | (waardes updated ongeveer om de 5 minuten) | ventilator snelheid: <span id="infoFanSpeed"></span>%</p>
+        </div>
+
+        <div id="visualFanContainer">
+            <div id="visualFan">
+                <img src="https://static-00.iconduck.com/assets.00/fan-icon-2048x2047-xm4tpklq.png">
+            </div>
+            
+        </div>
         <graphBlock>
             <div id="chartCanvasMin" style="height: 300px; width: 100%"></div>
             <div class="checkBoxContainer">

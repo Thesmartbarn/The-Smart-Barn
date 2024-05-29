@@ -47,6 +47,8 @@ h2 {
   margin-top: 2vh;
   text-align: center;
   font-size: 200%;
+
+  color: black;
 }
 
 #Inleiding{
@@ -64,6 +66,8 @@ h2 {
 .linkNaarBlog{
   object-fit: contain;
   text-align: center;
+
+  border-top: 0.5vh solid var(--primaryColor);
 }
 
 .koppelNaarGroepen {
@@ -74,13 +78,15 @@ h2 {
 }
 
 .koppelNaarGroepenTitel{
-  border-top: 5px solid rgba(239, 94, 27, 0.502);
+  border-top: 0.5vh solid var(--primaryColor);
   margin-top: 5vh;
 }
 
 .GroepVisualisatieTitel{
   color: var(--visColor);
 }
+
+
 
 .GroepVisualisatieInformatie{
   text-align: center;

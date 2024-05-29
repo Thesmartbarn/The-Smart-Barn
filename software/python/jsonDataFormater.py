@@ -3,10 +3,10 @@ from fileExistenceChecker import checkIfFileExists
 
 class GraphSimulator:  
     def __init__(self) -> None:
-        self.currentHour = date_timeHandler.hour()
+        self.currentHour = int(date_timeHandler.hour())
         self.currentDay = date_timeHandler.day()
         self.currentYear = date_timeHandler.year()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
+        self.simulatedGraphData = {"updateTime": "", "currentFanSpeed": 0, "min": [], "hour": [], "day": [], "fanDay": []}
         
         self.mockCounter = 0
     
@@ -14,23 +14,8 @@ class GraphSimulator:
         time = date_timeHandler.getMinuteFromDateTime(csvRow[0])
         self.simulatedGraphData["min"].append([time, int(csvRow[1]), int(csvRow[2])])
             
-        if self.currentHour != date_timeHandler.hour():
-            time = date_timeHandler.getHourFromDateTime(csvRow[0])
-            hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
-            self.simulatedGraphData["hour"].append(hourData)
-            
-        if self.currentDay != date_timeHandler.day():
-            dayData = [date_timeHandler.getHourFromDateTime(csvRow[0]), *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
-            self.simulatedGraphData["day"].append(dayData)
-            
         if len(self.simulatedGraphData["min"]) > 60:
             self.simulatedGraphData["min"].pop(0)
-        
-        if len(self.simulatedGraphData["hour"]) > 24:
-            self.simulatedGraphData["hour"].pop(0)
-        
-        if len(self.simulatedGraphData["day"]) > 365:
-            self.simulatedGraphData["day"].pop(0)
             
         # fan speed day long
         self.simulatedGraphData["fanDay"].append([date_timeHandler.getMinuteFromDateTime(csvRow[0]), float(csvRow[3])])
@@ -88,13 +73,35 @@ class JsonDataFormater(GraphSimulator):
     
     def overWriteJsonFileWithNewData(self, currentFanSpeed: int):
         self.getYearSpanCsvPaths()
-        self.simulatedGraphData = {"min": [], "hour": [], "day": [], "currentFanSpeed": 0, "fanDay": []}
+        self.simulatedGraphData = {"updateTime": "", "currentFanSpeed": 0, "min": [], "hour": [], "day": [], "fanDay": []}
         for csvFilePath in self.yearSpanCsvPaths:
             with open(csvFilePath) as csvFile:
                 csvData = csv.reader(csvFile)
                 for row in csvData:
                     super().simulate(row)
+        
+        if self.currentHour != int(date_timeHandler.hour()):
+            h = int(date_timeHandler.hour()) - 1
+            time = f"{f"0{h}" if h < 10 else h}:00"
+            hourData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["min"])]
+            self.simulatedGraphData["hour"].append(hourData)
+            self.currentHour = int(date_timeHandler.hour())
+            
+        if self.currentDay != date_timeHandler.day():
+            d = date_timeHandler.day() - 1
+            time = f"{d}-{date_timeHandler.month()}-{date_timeHandler.year()}"
+            dayData = [time, *GraphSimulator.averageOfDataList(self.simulatedGraphData["hour"])]
+            self.simulatedGraphData["day"].append(dayData)
+            self.currentDay = date_timeHandler.day()
+            
+        if len(self.simulatedGraphData["hour"]) > 24:
+            self.simulatedGraphData["hour"].pop(0)
+        
+        if len(self.simulatedGraphData["day"]) > 365:
+            self.simulatedGraphData["day"].pop(0)
+            
         self.simulatedGraphData["currentFanSpeed"] = currentFanSpeed
+        self.simulatedGraphData["updateTime"] = date_timeHandler.csvTimeFormat()
         self._writeDataToJson(self.simulatedGraphData)
         
     def overWriteJsonFileWithNewDataMock(self):
