@@ -1,4 +1,7 @@
 import RPi.GPIO as IO
+import board
+import digitalio
+import adafruit_max31865
 
 FAN_ON = 13
 FAN_OFF = 19
@@ -22,4 +25,6 @@ def setFanSpeed(fanSpeed):
         IO.output(FAN_OFF, IO.HIGH)
         pwm.ChangeDutyCycle(fanSpeed)
 
+def readTempSensor():
+    
 
