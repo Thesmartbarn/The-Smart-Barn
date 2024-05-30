@@ -1,5 +1,4 @@
 from fileExistenceChecker import checkIfFileExists
-import fanSwitch
 import fanControl
 import os
 from time import time, sleep
@@ -46,7 +45,7 @@ while True:
             hum = randomAlgorithm(hum)
 
             fan = dataCalculator.getFanSpeed(temp, hum)
-            fanSwitch.setFanStatus(fan)
+            fanControl.setFanStatus(fan)
             fanControl.setFanSpeed(fan)
 
             csvHandler.writeData([csvTimeFormat(), temp, hum, fan])
@@ -61,6 +60,6 @@ while True:
 
         sleep(0.5)
     except Exception as error:
-        fanSwitch.setFanStatus(100)
+        fanControl.setFanStatus(100)
         fanControl.setFanSpeed(100)
         raise Exception(error)
