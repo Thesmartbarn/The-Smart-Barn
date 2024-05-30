@@ -16,6 +16,11 @@ IO.setup(18, IO.OUT)
 pwm = IO.PWM(18, 50)
 pwm.start(0)
 
+# temp sensor
+spi = board.SPI()
+cs = digitalio.DigitalInOut(board.D5)  # Chip select of the MAX31865 board.
+sensor = adafruit_max31865.MAX31865(spi, cs)
+
 def setFanSpeed(fanSpeed):
     if fanSpeed == 0: 
         IO.output(FAN_OFF, IO.LOW)
@@ -26,5 +31,6 @@ def setFanSpeed(fanSpeed):
         pwm.ChangeDutyCycle(fanSpeed)
 
 def readTempSensor():
-    
+    return sensor.temperature
+
 
