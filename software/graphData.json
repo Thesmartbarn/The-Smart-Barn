@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "updateTime": "28-5-2024 11:46",
     "currentFanSpeed": 0,
     "min": [
@@ -127,6 +128,12 @@
             15
         ],
         [
+=======
+    "updateTime": "30-5-2024 14:33",
+    "currentFanSpeed": 87.70971517752629,
+    "min": [
+        [
+>>>>>>> a5ab0e5 (Automatic commit [skip netlify])
             "11:09",
             20,
             9
@@ -425,7 +432,15 @@
             "14:32",
             24,
             4
+<<<<<<< HEAD
 >>>>>>> 847afdc (Automatic commit [skip netlify])
+=======
+        ],
+        [
+            "14:33",
+            30,
+            4
+>>>>>>> a5ab0e5 (Automatic commit [skip netlify])
         ]
     ],
     "hour": [],
@@ -1027,7 +1042,14 @@
         [
             "14:32",
             0.0
+<<<<<<< HEAD
 >>>>>>> 847afdc (Automatic commit [skip netlify])
+=======
+        ],
+        [
+            "14:33",
+            87.70971517752629
+>>>>>>> a5ab0e5 (Automatic commit [skip netlify])
         ]
     ]
 }
