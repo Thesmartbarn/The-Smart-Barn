@@ -2,6 +2,8 @@ import RPi.GPIO as IO
 import board
 import digitalio
 import adafruit_max31865
+import adafruit_dht
+
 
 FAN_ON = 13
 FAN_OFF = 19
@@ -22,7 +24,7 @@ cs = digitalio.DigitalInOut(board.D5)  # Chip select of the MAX31865 board.
 tempSensor = adafruit_max31865.MAX31865(spi, cs)
 
 #hum sensor
-
+dht11 = adafruit_dht.DHT11(board.D17)
 
 def setFanSpeed(fanSpeed):
     if fanSpeed == 0: 
@@ -34,9 +36,13 @@ def setFanSpeed(fanSpeed):
         pwm.ChangeDutyCycle(fanSpeed)
 
 def readTempSensor():
-    return tempSensor.temperature
+    temp = tempSensor.temperature
+    return temp if temp != None else 0
 
 def readHumSensor():
+    
+    hum = dht11.humidity
+    return hum if hum != None else 0
 
 
 
