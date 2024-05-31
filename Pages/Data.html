@@ -32,9 +32,7 @@
         <script
             type="text/javascript"
             src="/software/js/createGraphs.js"></script>
-        <script
-            type="text/javascript"
-            src="/software/js/graph.js"></script>
+        <script type="text/javascript" src="/software/js/graph.js"></script>
 
         <script
             src="/HergebruikendeCodeSite/navbar.js"
@@ -49,71 +47,85 @@
     <body>
         <navigatiebalk></navigatiebalk>
         <div id="infoContainer">
-            <p>laatst geüpdated: <span id="infoUpdateTime"></span> | (waardes updated ongeveer om de 5 minuten) | ventilator snelheid: <span id="infoFanSpeed"></span>%</p>
+            <p>
+                laatst geüpdated: <span id="infoUpdateTime"></span> | (waardes
+                updated ongeveer om de 5 minuten) | ventilator snelheid:
+                <span id="infoFanSpeed"></span>%
+            </p>
         </div>
 
         <div id="visualFanContainer">
             <div id="visualFan">
-                <img src="https://static-00.iconduck.com/assets.00/fan-icon-2048x2047-xm4tpklq.png">
+                <img
+                    src="https://static-00.iconduck.com/assets.00/fan-icon-2048x2047-xm4tpklq.png" />
             </div>
-            
         </div>
-        <graphBlock>
-            <div id="chartCanvasMin" style="height: 300px; width: 100%"></div>
-            <div class="checkBoxContainer">
-                <label>temperature</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph1hum')"
-                    checked />
-                <label>humidity</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph1temp')"
-                    checked />
-            </div>
+        <div id="graphContainer">
+            <graphBlock>
+                <div
+                    id="chartCanvasMin"
+                    style="height: 300px; width: 100%"></div>
+                <div class="checkBoxContainer">
+                    <label>temperature</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph1hum')"
+                        checked />
+                    <label>humidity</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph1temp')"
+                        checked />
+                </div>
 
-            <div id="chartCanvasHour" style="height: 300px; width: 100%"></div>
-            <div class="checkBoxContainer">
-                <label>temperature</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph2hum')"
-                    checked />
-                <label>humidity</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph2temp')"
-                    checked />
-            </div>
+                <div
+                    id="chartCanvasHour"
+                    style="height: 300px; width: 100%"></div>
+                <div class="checkBoxContainer">
+                    <label>temperature</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph2hum')"
+                        checked />
+                    <label>humidity</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph2temp')"
+                        checked />
+                </div>
 
-            <div id="chartCanvasDay" style="height: 300px; width: 100%"></div>
-            <div class="checkBoxContainer">
-                <label>temperature</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph3hum')"
-                    checked />
-                <label>humidity</label>
-                <input
-                    type="checkbox"
-                    class="checkBox"
-                    name="checkBox"
-                    onchange="checkBox('graph3temp')"
-                    checked />
-            </div>
-        </graphBlock>
-        <div id="chartCanvasFan", style="height: 300px; width: 100%;"></div>
+                <div
+                    id="chartCanvasDay"
+                    style="height: 300px; width: 100%"></div>
+                <div class="checkBoxContainer">
+                    <label>temperature</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph3hum')"
+                        checked />
+                    <label>humidity</label>
+                    <input
+                        type="checkbox"
+                        class="checkBox"
+                        name="checkBox"
+                        onchange="checkBox('graph3temp')"
+                        checked />
+                </div>
+                <div
+                    id="chartCanvasFan"
+                    style="height: 300px; width: 100%"></div>
+            </graphBlock>
+        </div>
         <disclaimer></disclaimer>
     </body>
 </html>

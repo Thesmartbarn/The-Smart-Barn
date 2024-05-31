@@ -238,23 +238,53 @@ body{
     height: 20vh;
     margin-left: 5vw;
   }
+
+  .PersoonlijkeTussenTitel{
+    font-size: 150%;
+  }
+
+  .TussenTitel{
+    font-size: 150%;
+  }
+
+  .HoofdDoelKader{
+    width: 90vw;
+    height: 15vh;
+    margin-left: 5vw;
+  }
+
+  #hoofdoelkopTietel{
+    font-size: 150%;
+  }
+
+  #HoofdDoelTitel{
+    font-size: 150%;
+  }
+
+  #HoofdDoelInfo{
+    font-size: 150%;
+  }
+
+  #TussenDoelenTitel{
+    font-size: 150%;
+  }
 }
 
 @media (max-width:700px){
   .persoonlijkeDoelKaders{
     height: 22vh;
   }
-
-  h3{
-    font-size: 200%;
-  }
 }
 
 @media (max-width:500px){
   .persoonlijkeDoelKaders{
-    height: 20vh;
+    height: 25vh;
   }
   .DoelKaders{
     height: 15vh;
+  }
+
+  .HoofdDoelKader{
+    height: 30vh;
   }
 }
