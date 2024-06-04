@@ -5,10 +5,12 @@ current_directory = os.path.dirname(os.path.realpath(__file__))
 parent_directory = os.path.dirname(current_directory)
 sys.path.append(parent_directory)
 import dataCalculator
+import fanControl
+import pygame
 
 temp = hum = fanSpeed = 0
 
-app = gFrame.AppConstructor("100dw", "100dh")
+app = gFrame.AppConstructor("100dw", "100dh", pygame.FULLSCREEN)
 
 getFanSpeedBasedOnRealData = False
 
@@ -50,7 +52,21 @@ def placePointOnGraph(temp, hum):
             tempPos = graphInnerRect.ph(0)
         
     gFrame.Draw.circle((humPos, tempPos), 5, color)
-    
+
+def switchMode(status):
+    global getFanSpeedBasedOnRealData
+    if status:
+        switchToRealDataButton.updateColor(gFrame.Color.LIGHT_GRAY)
+        switchToManualDataButton.updateColor(gFrame.Color.LIGHT_GREEN)
+        getFanSpeedBasedOnRealData = False
+        tempSlider.enable()
+        humSlider.enable()
+    else:
+        switchToManualDataButton.updateColor(gFrame.Color.LIGHT_GRAY)
+        switchToRealDataButton.updateColor(gFrame.Color.LIGHT_GREEN)
+        getFanSpeedBasedOnRealData = True
+        tempSlider.disable()
+        humSlider.disable()
     
 
 while True:
@@ -59,7 +75,10 @@ while True:
 
     if app.everySecond():
         if getFanSpeedBasedOnRealData:
-            temp, hum = 0, 0
+            newTemp = fanControl.readTempSensor() 
+            newHum = fanControl.readHumSensor()
+            temp = newTemp if newTemp != None else temp
+            hum = newHum if newHum != None else hum
         else:
             temp = tempSlider.getValue()
             hum = humSlider.getValue()
@@ -69,20 +88,22 @@ while True:
 
         fanSpeed = dataCalculator.getFanSpeed(temp, hum)
         fanInfo.setText(f"huidige ventilator snelheid: {round(fanSpeed)}%")
+
+        fanControl.setFanSpeed(fanSpeed)
+    
+    if gFrame.Interactions.isKeyReleased(pygame.K_ESCAPE):
+        fanControl.setFanSpeed(0)
+        exit()
+
+    if gFrame.Interactions.isKeyClicked(pygame.K_SPACE):
+        switchMode(getFanSpeedBasedOnRealData)
+
         
     if switchToManualDataButton.isClicked():
-        switchToRealDataButton.updateColor(gFrame.Color.LIGHT_GRAY)
-        switchToManualDataButton.updateColor(gFrame.Color.LIGHT_GREEN)
-        getFanSpeedBasedOnRealData = False
-        tempSlider.enable()
-        humSlider.enable()
+        switchMode(True)
         
     if switchToRealDataButton.isClicked():
-        switchToManualDataButton.updateColor(gFrame.Color.LIGHT_GRAY)
-        switchToRealDataButton.updateColor(gFrame.Color.LIGHT_GREEN)
-        getFanSpeedBasedOnRealData = True
-        tempSlider.disable()
-        humSlider.disable()
+        switchMode(False)
         
         
     tempSlider.place("15vw", "5vh")

@@ -28,21 +28,26 @@ dht11 = adafruit_dht.DHT11(board.D17)
 
 def setFanSpeed(fanSpeed):
     if fanSpeed == 0: 
-        IO.output(FAN_OFF, IO.LOW)
-        IO.output(FAN_ON, IO.HIGH)
-    else:
-        IO.output(FAN_ON, IO.LOW)
         IO.output(FAN_OFF, IO.HIGH)
-        pwm.ChangeDutyCycle(fanSpeed)
+        IO.output(FAN_ON, IO.LOW)
+    else:
+        IO.output(FAN_ON, IO.HIGH)
+        IO.output(FAN_OFF, IO.LOW)
+        pwm.ChangeDutyCycle(round(fanSpeed))
 
 def readTempSensor():
-    temp = tempSensor.temperature
-    return temp if temp != None else 0
+    try:
+        temp = tempSensor.temperature
+    except: 
+        temp = None
+    return temp
 
 def readHumSensor():
-    
-    hum = dht11.humidity
-    return hum if hum != None else 0
+    try:
+        hum = dht11.humidity
+    except:
+        hum = None
+    return hum
 
 
 
