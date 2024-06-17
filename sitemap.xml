@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- created with sitemap-gen https://sitemap-gen.com/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://thesmartbarn.netlify.app/</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://blog-thesmartbarn.netlify.app/</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/pages/visualisatie</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/pages/software</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/pages/hardware</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/Pages/Visualisatie.html</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/Pages/Software.html</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+	<url>
+		<loc>https://thesmartbarn.netlify.app/Pages/Hardware.html</loc>
+		<lastmod>2024-06-17T09:27:31.9451524+02:00</lastmod>
+	</url>
+</urlset>
